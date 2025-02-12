@@ -1,24 +1,25 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
-import { usePathname } from "next/navigation"
-import type React from "react" // Added import for React
+import { motion } from "framer-motion"
+import type React from "react"
+import { useEffect, useState } from "react"
 
 export function Transition({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname()
+  const [isFirstMount, setIsFirstMount] = useState(true)
+
+  useEffect(() => {
+    setIsFirstMount(false)
+  }, [])
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.3 }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      initial={isFirstMount ? { opacity: 0 } : false}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="w-full"
+    >
+      {children}
+    </motion.div>
   )
 }
 

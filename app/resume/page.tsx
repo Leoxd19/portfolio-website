@@ -7,10 +7,10 @@ export default function ResumePage() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="flex items-center justify-center h-full">
       <motion.a
         href="/Leo_Gardberg_Resume.pdf"
-        download
+        download="Leo_Gardberg_Resume.pdf"
         className="relative px-8 py-4 bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -25,7 +25,7 @@ export default function ResumePage() {
           transition={{ duration: 0.3 }}
         />
       </motion.a>
-    </main>
+    </div>
   )
 }
 
