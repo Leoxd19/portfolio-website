@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { formatTime } from "@/lib/utils"
+import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
 export function LocationTime() {
   const [time, setTime] = useState("")
@@ -17,8 +18,10 @@ export function LocationTime() {
   }, [])
 
   return (
-    <div className="fixed top-5 left-5 text-sm font-mono z-10">
-      <span className="opacity-80">Stockholm, {time}</span>
+    <div className="fixed top-5 left-5 z-10">
+      <BackdropBlur>
+        <span className="text-sm font-mono text-black dark:text-white">Stockholm, {time}</span>
+      </BackdropBlur>
     </div>
   )
 }
