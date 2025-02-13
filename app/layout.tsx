@@ -2,6 +2,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { LocationTime } from "@/components/location-time"
 import { Navigation } from "@/components/navigation"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Transition } from "@/components/transition"
 import type React from "react"
 
@@ -19,13 +20,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-black text-white antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased transition-colors duration-300`}
+      >
         <LocationTime />
         <Navigation />
-        <Transition>
-          <main className="h-screen pt-16 overflow-hidden">{children}</main>
-        </Transition>
+        <ThemeToggle />
+        <Transition>{children}</Transition>
       </body>
     </html>
   )
