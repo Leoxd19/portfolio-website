@@ -18,7 +18,12 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({ description, logoSrc 
       className="w-full max-w-4xl mx-auto"
     >
       <div className="flex flex-col md:flex-row items-center gap-8">
-        <div className="w-60 h-60 relative flex-shrink-0">
+        <motion.div
+          className="w-60 h-60 relative flex-shrink-0"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <Image
             src={logoSrc || "/placeholder.svg"}
             alt="Project logo"
@@ -26,10 +31,15 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({ description, logoSrc 
             className="object-contain rounded-lg"
             priority
           />
-        </div>
-        <div className="flex-1 flex items-center">
-          <p className="text-xl md:text-2xl text-gray-800 dark:text-white leading-relaxed font-medium">{description}</p>
-        </div>
+        </motion.div>
+        <motion.div
+          className="flex-1 flex items-center"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <p className="text-xl md:text-2xl text-gray-800 dark:text-white leading-relaxed font-bold">{description}</p>
+        </motion.div>
       </div>
     </motion.div>
   )

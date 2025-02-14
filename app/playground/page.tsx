@@ -1,16 +1,37 @@
+"use client"
+
+import { useEffect } from "react"
 import dynamic from "next/dynamic"
 import Image from "next/image"
+import { motion, useAnimation } from "framer-motion"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
 const DynamicFeaturedProject = dynamic(() => import("@/components/featured-project"), { ssr: false })
 const DynamicConstantsVariablesGame = dynamic(() => import("@/components/constants-variables-game"), { ssr: false })
 
+// Improved Separator component
+const Separator = () => (
+  <div className="w-full my-12">
+    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-2/3 mx-auto"></div>
+  </div>
+)
+
 export default function Playground() {
+  const controls = useAnimation()
+
+  useEffect(() => {
+    controls.start((i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.3, duration: 0.5, ease: "easeOut" },
+    }))
+  }, [controls])
+
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 overflow-y-auto">
       <div className="max-w-5xl mx-auto px-4 py-12 space-y-8">
         {/* Featured Projects Section */}
-        <section className="space-y-8">
+        <motion.section className="space-y-8" initial={{ opacity: 0, y: 20 }} animate={controls} custom={0}>
           <BackdropBlur className="p-8 rounded-lg">
             <DynamicFeaturedProject
               description="Revolutionizing password and key storage with AI. Coming soon!"
@@ -18,8 +39,15 @@ export default function Playground() {
             />
           </BackdropBlur>
 
+          <Separator />
+
           <BackdropBlur className="p-8 rounded-lg">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <motion.div
+              className="flex flex-col md:flex-row items-center justify-center gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              custom={1}
+            >
               <div className="w-60 h-60 relative">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
@@ -31,7 +59,7 @@ export default function Playground() {
               </div>
               <div className="text-center md:text-left">
                 <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Espresso-Xoc</h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-black dark:text-white mb-4">
                   Explore the fascinating world of dark chocolate with Espresso-Xoc.
                 </p>
                 <a
@@ -43,28 +71,32 @@ export default function Playground() {
                   Visit Espresso-Xoc
                 </a>
               </div>
-            </div>
+            </motion.div>
           </BackdropBlur>
-        </section>
+        </motion.section>
+
+        <Separator />
 
         {/* Interactive Elements Section */}
-        <BackdropBlur className="p-8 rounded-lg">
-          <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-            <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lutece(s)-Tralv8RWwnuSr6KBKSKwBkvNfRZrMx.webp"
-                alt="The Lutece twins from BioShock Infinite flipping a coin"
-                width={800}
-                height={450}
-                className="w-full h-auto rounded-lg"
-                priority
-              />
+        <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={2}>
+          <BackdropBlur className="p-8 rounded-lg">
+            <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+              <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lutece(s)-Tralv8RWwnuSr6KBKSKwBkvNfRZrMx.webp"
+                  alt="The Lutece twins from BioShock Infinite flipping a coin"
+                  width={800}
+                  height={450}
+                  className="w-full h-auto rounded-lg"
+                  priority
+                />
+              </div>
+              <div className="w-full md:w-1/2">
+                <DynamicConstantsVariablesGame buttonClassName="bg-black dark:bg-white text-white dark:text-black hover:scale-105" />
+              </div>
             </div>
-            <div className="w-full md:w-1/2">
-              <DynamicConstantsVariablesGame buttonClassName="bg-black dark:bg-white text-white dark:text-black hover:scale-105" />
-            </div>
-          </div>
-        </BackdropBlur>
+          </BackdropBlur>
+        </motion.section>
       </div>
     </div>
   )

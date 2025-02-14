@@ -39,7 +39,12 @@ export default function ConstantsVariablesGame() {
 
   // Render
   return (
-    <div className="w-full max-w-sm mx-auto">
+    <motion.div
+      className="w-full max-w-sm mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white font-mono">
         Constants and Variables
       </h2>
@@ -59,17 +64,24 @@ export default function ConstantsVariablesGame() {
           </motion.div>
         </div>
 
-        <button
+        <motion.button
           onClick={flipCoin}
           disabled={flipping}
-          className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-sm font-mono disabled:opacity-50 hover:scale-105"
+          className={`px-6 py-2 ${buttonClassName} rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-sm font-mono disabled:opacity-50 hover:scale-105`}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           Flip Coin
-        </button>
+        </motion.button>
       </div>
 
       {/* Flip History */}
-      <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-inner w-full overflow-hidden border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+      <motion.div
+        className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-inner w-full overflow-hidden border border-gray-200 dark:border-gray-700 transition-colors duration-300"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <h3 className="text-sm font-bold mb-3 text-center text-gray-800 dark:text-white font-mono">Flip History</h3>
         <div className="flex justify-center gap-2">
           <AnimatePresence>
@@ -88,8 +100,8 @@ export default function ConstantsVariablesGame() {
             ))}
           </AnimatePresence>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 
