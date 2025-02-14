@@ -1,12 +1,12 @@
 import { Inter } from "next/font/google"
-import "./globals.css"
+import { Analytics } from "@vercel/analytics/react"
 import { LocationTime } from "@/components/location-time"
 import { Navigation } from "@/components/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Transition } from "@/components/transition"
 import { FloatingNavButton } from "@/components/floating-nav-button"
-import { Analytics } from "@vercel/analytics/react"
-import type React from "react"
+import "./globals.css"
+import type { ReactNode } from "react"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,11 +35,7 @@ export const metadata = {
     generator: 'v0.dev'
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased`}>

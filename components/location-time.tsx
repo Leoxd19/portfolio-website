@@ -19,8 +19,10 @@ export function LocationTime() {
 
   return (
     <div className="fixed top-5 left-5 z-10">
-      <BackdropBlur>
-        <span className="text-sm font-mono text-black dark:text-white">Stockholm, {time}</span>
+      <BackdropBlur className="bg-white/30 dark:bg-black/30">
+        <span className="text-sm font-mono font-bold text-gray-800 dark:text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)] dark:drop-shadow-none">
+          Stockholm, {time}
+        </span>
       </BackdropBlur>
     </div>
   )

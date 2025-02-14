@@ -1,42 +1,55 @@
-import { ConstantsVariablesGame } from "@/components/constants-variables-game"
-import FeaturedProject from "@/components/featured-project"
+import dynamic from "next/dynamic"
 import Image from "next/image"
+import { BackdropBlur } from "@/components/ui/backdrop-blur"
+
+const DynamicFeaturedProject = dynamic(() => import("@/components/featured-project"), { ssr: false })
+const DynamicConstantsVariablesGame = dynamic(() => import("@/components/constants-variables-game"), { ssr: false })
 
 export default function Playground() {
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 overflow-y-auto">
-      <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
+      <div className="max-w-5xl mx-auto px-4 py-12 space-y-8">
         {/* Featured Projects Section */}
         <section className="space-y-8">
-          <FeaturedProject
-            description="Revolutionizing password and key storage with AI. Coming soon!"
-            logoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sugarv2.jpg-oAy5uLorllZOXRF5qDuUHg63td2GV5.jpeg"
-          />
+          <BackdropBlur className="p-8 rounded-lg">
+            <DynamicFeaturedProject
+              description="Revolutionizing password and key storage with AI. Coming soon!"
+              logoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sugarv2.jpg-oAy5uLorllZOXRF5qDuUHg63td2GV5.jpeg"
+            />
+          </BackdropBlur>
 
-          <div className="flex items-start justify-center gap-4">
-            <div className="w-60 h-60 relative">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
-                alt="Espresso-Xoc logo"
-                width={240}
-                height={240}
-                className="w-full h-full object-contain dark:invert-0 invert rounded-lg"
-              />
+          <BackdropBlur className="p-8 rounded-lg">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              <div className="w-60 h-60 relative">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
+                  alt="Espresso-Xoc logo"
+                  width={240}
+                  height={240}
+                  className="w-full h-full object-contain dark:invert-0 invert rounded-lg"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Espresso-Xoc</h2>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  Explore the fascinating world of dark chocolate with Espresso-Xoc.
+                </p>
+                <a
+                  href="https://espresso-xoc.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-sm font-mono hover:scale-105"
+                >
+                  Visit Espresso-Xoc
+                </a>
+              </div>
             </div>
-            <a
-              href="https://espresso-xoc.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg font-medium underline hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 self-center"
-            >
-              Espresso-Xoc
-            </a>
-          </div>
+          </BackdropBlur>
         </section>
 
         {/* Interactive Elements Section */}
-        <section>
-          <div className="flex flex-col md:flex-row gap-8 items-start justify-center">
+        <BackdropBlur className="p-8 rounded-lg">
+          <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
             <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lutece(s)-Tralv8RWwnuSr6KBKSKwBkvNfRZrMx.webp"
@@ -48,10 +61,10 @@ export default function Playground() {
               />
             </div>
             <div className="w-full md:w-1/2">
-              <ConstantsVariablesGame />
+              <DynamicConstantsVariablesGame buttonClassName="bg-black dark:bg-white text-white dark:text-black hover:scale-105" />
             </div>
           </div>
-        </section>
+        </BackdropBlur>
       </div>
     </div>
   )
