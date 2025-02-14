@@ -4,9 +4,6 @@ module.exports = {
   content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
-      fontFamily: {
-        magz: ["var(--font-magz)"],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

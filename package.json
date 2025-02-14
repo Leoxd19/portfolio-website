@@ -61,7 +61,13 @@
     "@emotion/is-prop-valid": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "framer-motion": "latest"
+    "@remix-run/react": "latest",
+    "@sveltejs/kit": "latest",
+    "svelte": "latest",
+    "vue": "latest",
+    "vue-router": "latest",
+    "framer-motion": "latest",
+    "@vercel/analytics": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",

@@ -5,6 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Transition } from "@/components/transition"
 import { FloatingNavButton } from "@/components/floating-nav-button"
+import { Analytics } from "@vercel/analytics/react"
 import type React from "react"
 
 const inter = Inter({
@@ -33,6 +34,7 @@ export default function RootLayout({
           <FloatingNavButton />
           <main className="min-h-screen">{children}</main>
         </Transition>
+        <Analytics />
       </body>
     </html>
   )
