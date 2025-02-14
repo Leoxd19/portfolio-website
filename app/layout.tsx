@@ -4,9 +4,13 @@ import { LocationTime } from "@/components/location-time"
 import { Navigation } from "@/components/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Transition } from "@/components/transition"
+import { FloatingNavButton } from "@/components/floating-nav-button"
 import type React from "react"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+})
 
 export const metadata = {
   title: "Leo Gardberg - Portfolio",
@@ -20,14 +24,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased transition-colors duration-300`}
-      >
-        <LocationTime />
-        <Navigation />
-        <ThemeToggle />
-        <Transition>{children}</Transition>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased`}>
+        <Transition>
+          <LocationTime />
+          <Navigation />
+          <ThemeToggle />
+          <FloatingNavButton />
+          <main className="min-h-screen">{children}</main>
+        </Transition>
       </body>
     </html>
   )

@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { StyledEmail } from "@/components/ui/styled-email"
-import { BackdropBlur } from "@/components/ui/backdrop-blur"
 import { EMAIL_ADDRESS, BACKGROUND_IMAGE_URL } from "@/lib/constants"
 import { ResponsiveContainer } from "@/components/responsive-container"
 
@@ -11,7 +10,7 @@ export default function Home() {
       <div className="absolute inset-0">
         <Image
           src={BACKGROUND_IMAGE_URL || "/placeholder.svg"}
-          alt="Red Panda relaxing on a tree branch"
+          alt="Background image"
           fill
           priority
           sizes="100vw"
@@ -34,20 +33,18 @@ export default function Home() {
         </div>
       </ResponsiveContainer>
 
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10">
-        <BackdropBlur>
-          <p className="text-sm font-mono text-black dark:text-white">
-            Maintained and Developed by{" "}
-            <Link
-              href="https://github.com/Leoxd19"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold hover:underline"
-            >
-              Leo Gardberg
-            </Link>
-          </p>
-        </BackdropBlur>
+      <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-10">
+        <p className="text-sm font-mono text-black dark:text-white">
+          Built and Maintained by{" "}
+          <Link
+            href="https://github.com/Leoxd19"
+            className="underline hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Leo Gardberg
+          </Link>
+        </p>
       </div>
     </div>
   )

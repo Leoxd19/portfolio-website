@@ -3,9 +3,11 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+// Constants
 const FLIP_DURATION = 1.5
 const HISTORY_LIMIT = 5
 
+// Types
 type CoinSide = "H" | "T"
 
 interface FlipHistory {
@@ -14,11 +16,13 @@ interface FlipHistory {
 }
 
 export function ConstantsVariablesGame() {
+  // State
   const [flipping, setFlipping] = useState(false)
   const [result, setResult] = useState<CoinSide | null>(null)
   const [history, setHistory] = useState<FlipHistory[]>([])
   const [flipCount, setFlipCount] = useState(0)
 
+  // Event handler
   const flipCoin = () => {
     if (flipping) return
 
@@ -32,12 +36,14 @@ export function ConstantsVariablesGame() {
     }, FLIP_DURATION * 1000)
   }
 
+  // Render
   return (
     <div className="w-80 bg-white dark:bg-black bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-800 transition-colors duration-300">
       <h2 className="text-2xl font-bold mb-6 text-center text-black dark:text-white font-mono">
         Constants and Variables
       </h2>
 
+      {/* Coin and Flip Button */}
       <div className="flex justify-between items-center mb-6">
         <div className="relative w-24 h-24">
           <motion.div
@@ -61,6 +67,7 @@ export function ConstantsVariablesGame() {
         </button>
       </div>
 
+      {/* Flip History */}
       <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-inner w-full overflow-hidden border border-gray-200 dark:border-gray-700 transition-colors duration-300">
         <h3 className="text-sm font-bold mb-3 text-center text-black dark:text-white font-mono">Flip History</h3>
         <div className="flex justify-center gap-2">
