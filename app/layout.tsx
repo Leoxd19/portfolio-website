@@ -16,6 +16,22 @@ const inter = Inter({
 export const metadata = {
   title: "Leo Gardberg - Portfolio",
   description: "Personal portfolio of Leo Gardberg",
+  icons: {
+    icon: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-pVFN1uArEEIDU8eWrZMpDHqYSd9y87.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+    shortcut: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-pVFN1uArEEIDU8eWrZMpDHqYSd9y87.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+  },
     generator: 'v0.dev'
 }
 
