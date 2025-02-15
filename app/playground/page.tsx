@@ -21,7 +21,7 @@ export default function Playground() {
   }, [controls])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900 transition-colors duration-300 overflow-y-auto pt-20">
+    <div className="min-h-screen bg-white dark:bg-gradient-to-b dark:from-black dark:to-gray-900 transition-colors duration-300 overflow-y-auto pt-20">
       <div className="max-w-5xl mx-auto px-4 py-16 space-y-16">
         <motion.section className="space-y-16" initial={{ opacity: 0, y: 20 }} animate={controls} custom={0}>
           {/* Featured Project */}
@@ -54,7 +54,7 @@ export default function Playground() {
               </div>
               <div className="w-full md:w-2/3 text-center md:text-left">
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🍫 Espresso-Xoc</h2>
-                <p className="text-black dark:text-white mb-6">
+                <p className="text-base md:text-lg text-black dark:text-white mb-6">
                   Explore the fascinating world of dark chocolate with Espresso-Xoc. Discover unique flavors and learn
                   about the rich history of chocolate, from ancient Aztec traditions to modern artisanal creations.
                 </p>
