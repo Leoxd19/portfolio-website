@@ -76,7 +76,7 @@ export default function ResumePage() {
   ]
 
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer className="z-0">
       <div className="flex flex-col items-center space-y-12">
         {/* Resume download button with hover effect */}
         <motion.a
@@ -105,19 +105,23 @@ export default function ResumePage() {
         {/* Skills section */}
         <BackdropBlur className="w-full max-w-4xl p-6 rounded-lg">
           <h2 className="text-2xl font-bold mb-6 text-center">Technologies I've Worked With</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 bg-white/30 backdrop-blur-sm rounded-lg">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 bg-white/20 dark:bg-black/40 backdrop-blur-md rounded-lg border border-gray-200/20 dark:border-gray-700/20 shadow-lg">
             {skillItems.map((item) => (
               <div
                 key={item.name}
-                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 bg-white/50"
+                className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-200/30 dark:hover:bg-gray-700/30 transition-all duration-200 bg-white/30 dark:bg-gray-800/30 shadow-md overflow-hidden group"
               >
-                <item.Icon
-                  className="w-6 h-6"
-                  style={{
-                    color: item.color,
-                  }}
-                />
-                <span className="text-sm">{item.name}</span>
+                <div className="flex items-center space-x-2 transition-all duration-200 group-hover:scale-110">
+                  <item.Icon
+                    className="w-6 h-6 filter drop-shadow-md transition-transform duration-200"
+                    style={{
+                      color: item.color,
+                    }}
+                  />
+                  <span className="text-sm font-medium text-gray-800 dark:text-gray-200 transition-all duration-200 group-hover:font-semibold">
+                    {item.name}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

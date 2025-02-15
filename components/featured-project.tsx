@@ -15,11 +15,11 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({ description, logoSrc 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-4xl mx-auto"
+      className="w-full"
     >
       <div className="flex flex-col md:flex-row items-center gap-8">
         <motion.div
-          className="w-60 h-60 relative flex-shrink-0 rounded-full overflow-hidden"
+          className="w-full md:w-1/3 relative flex-shrink-0 rounded-full overflow-hidden shadow-lg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -27,19 +27,20 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({ description, logoSrc 
           <Image
             src={logoSrc || "/placeholder.svg"}
             alt="Project logo"
-            fill
-            className="object-cover rounded-full"
+            width={300}
+            height={300}
+            className="w-full h-auto object-cover rounded-full"
             priority
           />
         </motion.div>
         <motion.div
-          className="flex-1 flex items-center"
+          className="w-full md:w-2/3 flex items-center"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p className="text-xl md:text-2xl text-gray-800 dark:text-white leading-relaxed font-bold">
-            Transforming password and key storage with the power of AI. Stay tuned!
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed font-semibold">
+            {description}
           </p>
         </motion.div>
       </div>

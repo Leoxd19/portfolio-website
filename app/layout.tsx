@@ -1,48 +1,37 @@
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
-import type { ReactNode } from "react"
-
 import { LocationTime } from "@/components/location-time"
 import { Navigation } from "@/components/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Transition } from "@/components/transition"
 import { FloatingNavButton } from "@/components/floating-nav-button"
 import "./globals.css"
+import type { ReactNode } from "react"
 
-// Initialize the Inter font with Latin subset
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 })
 
-// Metadata for the application
 export const metadata = {
   title: "Leo Gardberg - Portfolio",
   description: "Personal portfolio of Leo Gardberg",
   icons: {
     icon: [
-      {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-pVFN1uArEEIDU8eWrZMpDHqYSd9y87.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: [
-      {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-pVFN1uArEEIDU8eWrZMpDHqYSd9y87.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#5bbad5" }],
   },
+  manifest: "/site.webmanifest",
     generator: 'v0.dev'
 }
 
-// Root layout component
-export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      {/* suppressHydrationWarning is used to prevent warnings caused by client-side theme switching */}
       <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased`}>
         <Transition>
           <LocationTime />

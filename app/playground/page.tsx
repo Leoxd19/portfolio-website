@@ -9,13 +9,6 @@ import { BackdropBlur } from "@/components/ui/backdrop-blur"
 const DynamicFeaturedProject = dynamic(() => import("@/components/featured-project"), { ssr: false })
 const DynamicConstantsVariablesGame = dynamic(() => import("@/components/constants-variables-game"), { ssr: false })
 
-// Improved Separator component
-const Separator = () => (
-  <div className="w-full my-12">
-    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-2/3 mx-auto"></div>
-  </div>
-)
-
 export default function Playground() {
   const controls = useAnimation()
 
@@ -28,45 +21,45 @@ export default function Playground() {
   }, [controls])
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 overflow-y-auto">
-      <div className="max-w-5xl mx-auto px-4 py-12 space-y-8">
-        {/* Featured Projects Section */}
-        <motion.section className="space-y-8" initial={{ opacity: 0, y: 20 }} animate={controls} custom={0}>
-          <BackdropBlur className="p-8 rounded-lg">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900 transition-colors duration-300 overflow-y-auto pt-20">
+      <div className="max-w-5xl mx-auto px-4 py-16 space-y-16">
+        <motion.section className="space-y-16" initial={{ opacity: 0, y: 20 }} animate={controls} custom={0}>
+          {/* Featured Project */}
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
             <DynamicFeaturedProject
               description="Revolutionizing password and key storage with AI. Coming soon!"
               logoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sugarv2.jpg-oAy5uLorllZOXRF5qDuUHg63td2GV5.jpeg"
             />
           </BackdropBlur>
 
-          <Separator />
-
-          <BackdropBlur className="p-8 rounded-lg">
+          {/* Espresso-Xoc Project */}
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
             <motion.div
-              className="flex flex-col md:flex-row items-center justify-center gap-8"
+              className="flex flex-col md:flex-row items-center justify-between gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={controls}
               custom={1}
             >
-              <div className="w-60 h-60 relative">
+              <div className="w-full md:w-1/3">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
                   alt="Espresso-Xoc logo"
                   width={240}
                   height={240}
-                  className="w-full h-full object-contain dark:invert-0 invert rounded-lg"
+                  className="w-full h-auto object-contain dark:invert-0 invert rounded-lg"
                 />
               </div>
-              <div className="text-center md:text-left">
-                <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Espresso-Xoc</h2>
-                <p className="text-black dark:text-white mb-4">
-                  Explore the fascinating world of dark chocolate with Espresso-Xoc.
+              <div className="w-full md:w-2/3 text-center md:text-left">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Espresso-Xoc</h2>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  Explore the fascinating world of dark chocolate with Espresso-Xoc. Discover unique flavors and learn
+                  about the rich history of chocolate, from ancient Aztec traditions to modern artisanal creations.
                 </p>
                 <a
                   href="https://espresso-xoc.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-sm font-mono hover:scale-105"
+                  className="inline-block px-6 py-2 bg-gray-800 dark:bg-white text-white dark:text-gray-800 rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-sm font-mono hover:scale-105"
                 >
                   Visit Espresso-Xoc
                 </a>
@@ -75,17 +68,15 @@ export default function Playground() {
           </BackdropBlur>
         </motion.section>
 
-        <Separator />
-
         {/* Interactive Elements Section */}
         <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={2}>
-          <BackdropBlur className="p-8 rounded-lg">
-            <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-              <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden">
-                <div className="relative p-4 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-lg shadow-lg">
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
+            <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
+              <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden shadow-lg">
+                <div className="relative p-4 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-lg">
                   <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 opacity-50 rounded-lg"></div>
                   <div className="relative">
-                    <div className="absolute inset-0 border-8 border-yellow-300 rounded-lg pointer-events-none"></div>
+                    <div className="absolute inset-0 border-4 border-yellow-300 rounded-lg pointer-events-none"></div>
                     <Image
                       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lutece(s)-Tralv8RWwnuSr6KBKSKwBkvNfRZrMx.webp"
                       alt="The Lutece twins from BioShock Infinite flipping a coin"
@@ -98,7 +89,7 @@ export default function Playground() {
                 </div>
               </div>
               <div className="w-full md:w-1/2">
-                <DynamicConstantsVariablesGame buttonClassName="bg-black dark:bg-white text-white dark:text-black hover:scale-105" />
+                <DynamicConstantsVariablesGame buttonClassName="bg-gray-800 dark:bg-white text-white dark:text-gray-800 hover:scale-105" />
               </div>
             </div>
           </BackdropBlur>

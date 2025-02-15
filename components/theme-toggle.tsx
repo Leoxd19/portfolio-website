@@ -2,6 +2,7 @@
 
 import { Moon, Sun } from "lucide-react"
 import { useEffect, useState } from "react"
+import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(true)
@@ -22,17 +23,21 @@ export function ThemeToggle() {
   }
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="fixed top-5 left-1/2 -translate-x-1/2 p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 z-50 transition-all duration-300 ease-in-out hover:scale-110"
-      aria-label="Toggle theme"
-    >
-      {isDark ? (
-        <Sun className="w-4 h-4 text-white transition-transform duration-300 ease-in-out" />
-      ) : (
-        <Moon className="w-4 h-4 text-black transition-transform duration-300 ease-in-out" />
-      )}
-    </button>
+    <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50">
+      <BackdropBlur className="bg-white/80 dark:bg-black/80 border border-gray-200/50 dark:border-gray-800/50">
+        <button
+          onClick={toggleTheme}
+          className="p-2 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300"
+          aria-label="Toggle theme"
+        >
+          {isDark ? (
+            <Sun className="w-4 h-4 transition-transform duration-300 ease-in-out" />
+          ) : (
+            <Moon className="w-4 h-4 transition-transform duration-300 ease-in-out" />
+          )}
+        </button>
+      </BackdropBlur>
+    </div>
   )
 }
 
