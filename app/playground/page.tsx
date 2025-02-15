@@ -53,7 +53,7 @@ export default function Playground() {
                 </div>
               </div>
               <div className="w-full md:w-2/3 text-center md:text-left">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🍫 Espresso-Xoc</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">☕ Espresso-Xoc 🌱</h2>
                 <p className="text-base md:text-lg text-black dark:text-white mb-6">
                   Explore the fascinating world of dark chocolate with Espresso-Xoc. Discover unique flavors and learn
                   about the rich history of chocolate, from ancient Aztec traditions to modern artisanal creations.
