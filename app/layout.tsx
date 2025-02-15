@@ -1,18 +1,21 @@
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
+import type { ReactNode } from "react"
+
 import { LocationTime } from "@/components/location-time"
 import { Navigation } from "@/components/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Transition } from "@/components/transition"
 import { FloatingNavButton } from "@/components/floating-nav-button"
 import "./globals.css"
-import type { ReactNode } from "react"
 
+// Initialize the Inter font with Latin subset
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 })
 
+// Metadata for the application
 export const metadata = {
   title: "Leo Gardberg - Portfolio",
   description: "Personal portfolio of Leo Gardberg",
@@ -35,9 +38,11 @@ export const metadata = {
     generator: 'v0.dev'
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+// Root layout component
+export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      {/* suppressHydrationWarning is used to prevent warnings caused by client-side theme switching */}
       <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased`}>
         <Transition>
           <LocationTime />

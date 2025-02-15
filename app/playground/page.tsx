@@ -82,14 +82,20 @@ export default function Playground() {
           <BackdropBlur className="p-8 rounded-lg">
             <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
               <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lutece(s)-Tralv8RWwnuSr6KBKSKwBkvNfRZrMx.webp"
-                  alt="The Lutece twins from BioShock Infinite flipping a coin"
-                  width={800}
-                  height={450}
-                  className="w-full h-auto rounded-lg"
-                  priority
-                />
+                <div className="relative p-4 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-lg shadow-lg">
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 opacity-50 rounded-lg"></div>
+                  <div className="relative">
+                    <div className="absolute inset-0 border-8 border-yellow-300 rounded-lg pointer-events-none"></div>
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lutece(s)-Tralv8RWwnuSr6KBKSKwBkvNfRZrMx.webp"
+                      alt="The Lutece twins from BioShock Infinite flipping a coin"
+                      width={800}
+                      height={450}
+                      className="w-full h-auto rounded-lg"
+                      priority
+                    />
+                  </div>
+                </div>
               </div>
               <div className="w-full md:w-1/2">
                 <DynamicConstantsVariablesGame buttonClassName="bg-black dark:bg-white text-white dark:text-black hover:scale-105" />

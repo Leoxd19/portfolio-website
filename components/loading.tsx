@@ -3,14 +3,17 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
+// Loading component displays a loading animation on the first load
 export function Loading() {
-  const [isFirstLoad, setIsFirstLoad] = useState(true)
+  const [isInitialLoad, setIsInitialLoad] = useState(true)
 
   useEffect(() => {
-    setIsFirstLoad(false)
+    // Set isInitialLoad to false after the component mounts
+    setIsInitialLoad(false)
   }, [])
 
-  if (!isFirstLoad) return null
+  // Don't render anything if it's not the initial load
+  if (!isInitialLoad) return null
 
   return (
     <motion.div
@@ -19,6 +22,7 @@ export function Loading() {
       transition={{ duration: 0.5, delay: 1 }}
       onAnimationComplete={(definition) => {
         if (definition === "opacity: 0") {
+          // Re-enable scrolling after the animation completes
           document.body.style.overflow = "unset"
         }
       }}

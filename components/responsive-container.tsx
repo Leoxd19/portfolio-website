@@ -11,6 +11,7 @@ export function ResponsiveContainer({ children, className = "" }: ResponsiveCont
   const [scale, setScale] = useState(1)
 
   useEffect(() => {
+    // Function to handle resizing and calculate the appropriate scale
     function handleResize() {
       const viewportHeight = window.innerHeight
       const contentHeight = document.body.scrollHeight
@@ -18,8 +19,13 @@ export function ResponsiveContainer({ children, className = "" }: ResponsiveCont
       setScale(newScale)
     }
 
+    // Initial call to set the scale
     handleResize()
+
+    // Add event listener for window resize
     window.addEventListener("resize", handleResize)
+
+    // Cleanup function to remove the event listener
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 

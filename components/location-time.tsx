@@ -4,16 +4,20 @@ import { useEffect, useState } from "react"
 import { formatTime } from "@/lib/utils"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
+// LocationTime component displays the current time in Stockholm
 export function LocationTime() {
   const [time, setTime] = useState("")
 
   useEffect(() => {
-    function updateTime() {
+    // Update the time every second
+    function updateCurrentTime() {
       setTime(formatTime(new Date()))
     }
 
-    updateTime()
-    const interval = setInterval(updateTime, 1000)
+    updateCurrentTime() // Initial update
+    const interval = setInterval(updateCurrentTime, 1000)
+
+    // Clean up the interval on component unmount
     return () => clearInterval(interval)
   }, [])
 

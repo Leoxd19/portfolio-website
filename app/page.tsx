@@ -3,6 +3,7 @@ import Link from "next/link"
 import { StyledEmail } from "@/components/ui/styled-email"
 import { EMAIL_ADDRESS, BACKGROUND_IMAGE_URL } from "@/lib/constants"
 import { ResponsiveContainer } from "@/components/responsive-container"
+import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
 export default function Home() {
   return (
@@ -34,17 +35,19 @@ export default function Home() {
       </ResponsiveContainer>
 
       <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-10">
-        <p className="text-sm font-mono text-black dark:text-white">
-          Built and Maintained by{" "}
-          <Link
-            href="https://github.com/Leoxd19"
-            className="underline hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Leo Gardberg
-          </Link>
-        </p>
+        <BackdropBlur>
+          <p className="text-sm font-mono text-black dark:text-white px-3 py-1">
+            Built and Maintained by{" "}
+            <Link
+              href="https://github.com/Leoxd19"
+              className="underline hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leo Gardberg
+            </Link>
+          </p>
+        </BackdropBlur>
       </div>
     </div>
   )
