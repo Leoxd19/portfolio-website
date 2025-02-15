@@ -34,13 +34,16 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({ description, logoSrc 
           />
         </motion.div>
         <motion.div
-          className="w-full md:w-2/3 flex items-center"
+          className="w-full md:w-2/3 flex flex-col items-start"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed font-semibold">
-            {description}
+          <p className="text-xl md:text-2xl text-black dark:text-white leading-relaxed font-semibold mb-2">
+            🔐 Secure AI-Powered Password Management 🗝️
+          </p>
+          <p className="text-xl md:text-2xl text-black dark:text-white leading-relaxed">
+            Revolutionizing password and key storage with AI. Coming Soon!
           </p>
         </motion.div>
       </div>

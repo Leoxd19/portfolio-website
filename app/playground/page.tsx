@@ -41,13 +41,16 @@ export default function Playground() {
               custom={1}
             >
               <div className="w-full md:w-1/3">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
-                  alt="Espresso-Xoc logo"
-                  width={240}
-                  height={240}
-                  className="w-full h-auto object-contain dark:invert-0 invert rounded-lg"
-                />
+                <div className="relative">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
+                    alt="Espresso-Xoc logo"
+                    width={240}
+                    height={240}
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-black mix-blend-difference pointer-events-none dark:hidden" />
+                </div>
               </div>
               <div className="w-full md:w-2/3 text-center md:text-left">
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Espresso-Xoc</h2>
