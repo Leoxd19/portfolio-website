@@ -41,20 +41,20 @@ export default function Playground() {
               custom={1}
             >
               <div className="w-full md:w-1/3">
-                <div className="relative">
+                <div className="relative bg-black rounded-lg overflow-hidden">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
                     alt="Espresso-Xoc logo"
                     width={240}
                     height={240}
-                    className="w-full h-auto object-contain rounded-lg"
+                    className="w-full h-auto object-contain"
                   />
                   <div className="absolute inset-0 bg-black mix-blend-difference pointer-events-none dark:hidden" />
                 </div>
               </div>
               <div className="w-full md:w-2/3 text-center md:text-left">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Espresso-Xoc</h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🍫 Espresso-Xoc</h2>
+                <p className="text-black dark:text-white mb-6">
                   Explore the fascinating world of dark chocolate with Espresso-Xoc. Discover unique flavors and learn
                   about the rich history of chocolate, from ancient Aztec traditions to modern artisanal creations.
                 </p>

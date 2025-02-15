@@ -64,6 +64,8 @@ export default function ConstantsVariablesGame() {
           </motion.div>
         </div>
 
+        <div className="text-4xl">🪙</div>
+
         <motion.button
           onClick={flipCoin}
           disabled={flipping}

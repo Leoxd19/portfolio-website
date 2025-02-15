@@ -42,7 +42,7 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({ description, logoSrc 
           <p className="text-xl md:text-2xl text-black dark:text-white leading-relaxed font-semibold mb-2">
             🔐 Secure AI-Powered Password Management 🗝️
           </p>
-          <p className="text-xl md:text-2xl text-black dark:text-white leading-relaxed">
+          <p className="text-base md:text-lg text-black dark:text-white leading-relaxed">
             Revolutionizing password and key storage with AI. Coming Soon!
           </p>
         </motion.div>
