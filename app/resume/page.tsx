@@ -1,3 +1,5 @@
+// Resume page component
+// Displays a download button for the resume and a grid of technologies
 "use client"
 import { useState, useCallback, useMemo } from "react"
 import { motion, useAnimation } from "framer-motion"
@@ -6,9 +8,12 @@ import { BackdropBlur } from "@/components/ui/backdrop-blur"
 import { skillItems } from "@/lib/skill-items"
 
 export default function ResumePage() {
+  // State for hover effect on download button
   const [isHovered, setIsHovered] = useState(false)
+  // Animation control for progress bar
   const progressControls = useAnimation()
 
+  // Handlers for mouse events on download button
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true)
     progressControls.start({ width: "100%", transition: { duration: 1, ease: "easeInOut" } })
@@ -19,6 +24,7 @@ export default function ResumePage() {
     progressControls.start({ width: "0%", transition: { duration: 0.3 } })
   }, [progressControls])
 
+  // Animation variants for container and items
   const containerVariants = useMemo(
     () => ({
       hidden: { opacity: 0 },
@@ -42,11 +48,12 @@ export default function ResumePage() {
 
   return (
     <ResponsiveContainer className="z-0">
-      <div className="flex flex-col items-center space-y-12">
+      <div className="flex flex-col items-center space-y-12 py-12">
+        {/* Download resume button with hover effect and progress bar */}
         <motion.a
           href="/Leo_Gardberg_Resume.pdf"
           download="Leo_Gardberg_Resume.pdf"
-          className="relative px-8 py-4 bg-transparent text-current rounded-lg overflow-hidden border border-current/20 transition-colors duration-300 ease-in-out mt-8"
+          className="relative px-8 py-4 bg-transparent text-current rounded-lg overflow-hidden border border-current/20 transition-colors duration-300 ease-in-out"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           whileHover={{ scale: 1.05 }}
@@ -66,8 +73,10 @@ export default function ResumePage() {
           />
         </motion.a>
 
+        {/* Technologies grid */}
         <BackdropBlur className="w-full max-w-4xl p-6 rounded-lg">
           <h2 className="text-2xl font-bold mb-6 text-center">Technologies I've Worked With</h2>
+          {/* Grid of technology icons and names */}
           <motion.div
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 bg-white/20 dark:bg-black/40 backdrop-blur-md rounded-lg border border-gray-200/20 dark:border-gray-700/20 shadow-lg"
             variants={containerVariants}

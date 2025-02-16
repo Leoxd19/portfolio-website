@@ -7,11 +7,13 @@ import { FloatingNavButton } from "@/components/floating-nav-button"
 import "./globals.css"
 import type { ReactNode } from "react"
 
+// Load Inter font
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 })
 
+// Metadata for the application
 export const metadata = {
   title: "Leo Gardberg - Portfolio",
   description: "Personal portfolio of Leo Gardberg",
@@ -39,10 +41,12 @@ export const metadata = {
     generator: 'v0.dev'
 }
 
+// Root layout component
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
+        {/* Favicon links */}
         <link
           rel="icon"
           type="image/png"
@@ -63,10 +67,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased`}>
+        {/* Mobile navigation */}
         <div className="sm:hidden flex flex-col items-end space-y-2 p-4">
           <ThemeToggle />
           <Navigation />
         </div>
+        {/* Desktop navigation */}
         <div className="hidden sm:block">
           <LocationTime />
           <Navigation />

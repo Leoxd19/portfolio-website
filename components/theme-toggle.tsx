@@ -4,10 +4,12 @@ import { Moon, Sun } from "lucide-react"
 import { useEffect, useState } from "react"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
+// Theme toggle component
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(true)
 
   useEffect(() => {
+    // Initialize theme from localStorage or default to dark
     const root = document.documentElement
     const savedTheme = localStorage.getItem("theme") || "dark"
     setIsDark(savedTheme === "dark")
@@ -15,6 +17,7 @@ export function ThemeToggle() {
   }, [])
 
   const toggleTheme = () => {
+    // Toggle theme and update localStorage
     const root = document.documentElement
     const newTheme = isDark ? "light" : "dark"
     setIsDark(!isDark)

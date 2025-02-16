@@ -7,6 +7,7 @@ import { ChevronRight, ChevronLeft } from "lucide-react"
 import { NAVIGATION_LINKS } from "@/lib/constants"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
+// Floating navigation button component
 export function FloatingNavButton() {
   const router = useRouter()
   const pathname = usePathname()
@@ -15,11 +16,13 @@ export function FloatingNavButton() {
   const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
+    // Update current index and home page status based on pathname
     const index = NAVIGATION_LINKS.findIndex((link) => link.href === pathname)
     setCurrentIndex(index !== -1 ? index : 0)
     setIsHomePage(pathname === "/")
   }, [pathname])
 
+  // Navigation handlers
   const handleForwardClick = useCallback(() => {
     const nextIndex = (currentIndex + 1) % NAVIGATION_LINKS.length
     setCurrentIndex(nextIndex)
@@ -32,6 +35,7 @@ export function FloatingNavButton() {
     router.push(NAVIGATION_LINKS[prevIndex].href)
   }, [currentIndex, router])
 
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 },

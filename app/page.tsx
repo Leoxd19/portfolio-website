@@ -8,9 +8,11 @@ import { ResponsiveContainer } from "@/components/responsive-container"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 import { motion } from "framer-motion"
 
+// Home page component
 export default function Home() {
   return (
     <div className="relative w-screen h-screen overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
         <Image
           src={BACKGROUND_IMAGE_URL || "/placeholder.svg"}
@@ -24,9 +26,11 @@ export default function Home() {
             objectPosition: "center",
           }}
         />
+        {/* Overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/20 dark:bg-black/40 transition-colors duration-300" />
       </div>
 
+      {/* Main content */}
       <ResponsiveContainer>
         <motion.div
           className="relative z-10 text-center max-w-lg"
@@ -42,6 +46,7 @@ export default function Home() {
         </motion.div>
       </ResponsiveContainer>
 
+      {/* Footer */}
       <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-5">
         <motion.div
           className="z-10"

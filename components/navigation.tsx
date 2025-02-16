@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { NAVIGATION_LINKS } from "@/lib/constants"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
+// Navigation component
 export function Navigation() {
   const pathname = usePathname()
 
