@@ -1,31 +1,22 @@
-# Portfolio Website
+# Leo Gardberg's Portfolio Website
 
-This is the repository for my personal portfolio website
-[(leogardberg.vercel.app)](https://leogardberg.vercel.app/)
+Welcome to the repository of my personal portfolio website. This is my take on a modern responsive site.
 
-## Technologies Used
+## 🌟 Features
 
-- **Next.js**: React framework for building the user interface
+- Responsive design that works on desktop, tablet, and mobile
+- Dark/Light mode toggle for user preference
+- Interactive resume page with downloadable PDF
+- Playground section featuring projects and interactive elements
+- Smooth animations and transitions using Framer Motion
+- Server-side rendering with Next.js for optimal performance
+
+## 🛠 Technologies Used
+
+- **Next.js**: React framework for server-side rendering and static site generation
 - **React**: JavaScript library for building user interfaces
-- **TypeScript**: Typed superset of JavaScript for improved developer experience
-- **Tailwind CSS**: Utility-first CSS framework for styling
-- **Framer Motion**: Library for adding animations to React components
-- **Vercel**: Platform for deploying and hosting the website
-
-## Features
-
-- Responsive design
-- Dynamic navigation with animated underline
-- Interactive playground with a coin flip game
-- Downloadable resume
-- Animated transitions between pages
-
-## Getting Started
-
-To run this project locally:
-
-1. Clone the repository
-2. Install dependencies with `npm install`
-3. Run the development server with `npm run dev`
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+- **TypeScript**: Typed superset of JavaScript for enhanced developer experience
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Framer Motion**: Animation library for React
+- **Vercel**: Platform for deployment and hosting
 
