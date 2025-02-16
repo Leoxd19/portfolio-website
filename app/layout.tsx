@@ -18,12 +18,32 @@ export const metadata = {
   description: "Personal portfolio of Leo Gardberg",
   icons: {
     icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/faviconxyz-an1ZHFtyMvSJIMvHvMyz6vOtmeDdDM.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/faviconxyz-an1ZHFtyMvSJIMvHvMyz6vOtmeDdDM.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#5bbad5" }],
+    apple: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/faviconxyz-an1ZHFtyMvSJIMvHvMyz6vOtmeDdDM.png",
+        sizes: "180x180",
+        type: "image/png",
+        rel: "apple-touch-icon",
+      },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/faviconxyz-an1ZHFtyMvSJIMvHvMyz6vOtmeDdDM.png",
+        color: "#E86A33", // Color matching the red panda's fur
+      },
+    ],
   },
   manifest: "/site.webmanifest",
     generator: 'v0.dev'
