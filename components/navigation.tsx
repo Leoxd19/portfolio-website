@@ -9,7 +9,7 @@ export function Navigation() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-5 right-5 z-50">
+    <nav className="z-50 sm:fixed sm:top-5 sm:right-5">
       <BackdropBlur className="bg-white/80 dark:bg-black/80 border border-gray-200/50 dark:border-gray-800/50">
         <div className="flex gap-4 p-2">
           {NAVIGATION_LINKS.map(({ href, label }) => (

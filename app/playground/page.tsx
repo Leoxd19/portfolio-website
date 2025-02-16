@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useCallback } from "react"
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import { motion, useAnimation } from "framer-motion"
@@ -12,19 +12,22 @@ const DynamicConstantsVariablesGame = dynamic(() => import("@/components/constan
 export default function Playground() {
   const controls = useAnimation()
 
-  useEffect(() => {
+  const startAnimation = useCallback(() => {
     controls.start((i) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.3, duration: 0.5, ease: "easeOut" },
+      transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
     }))
   }, [controls])
+
+  useEffect(() => {
+    startAnimation()
+  }, [startAnimation])
 
   return (
     <div className="min-h-screen bg-white dark:bg-gradient-to-b dark:from-black dark:to-gray-900 transition-colors duration-300 overflow-y-auto pt-20">
       <div className="max-w-4xl mx-auto px-4 py-16 space-y-16">
         <motion.section className="space-y-16" initial={{ opacity: 0, y: 20 }} animate={controls} custom={0}>
-          {/* Featured Project */}
           <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
             <DynamicFeaturedProject
               title="Secure AI-Powered Password Management"
@@ -35,14 +38,13 @@ export default function Playground() {
             />
           </BackdropBlur>
 
-          {/* Espresso-Xoc Project */}
           <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
               <div className="w-full md:w-3/5 flex flex-col items-center md:items-start text-center md:text-left">
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Espresso-Xoc</h2>
                 <p className="text-base md:text-lg text-black dark:text-white mb-6">
-                  Explore the fascinating world of dark chocolate with Espresso-Xoc. Discover unique flavors and learn
-                  about the rich history of chocolate, from ancient Aztec traditions to modern artisanal creations.
+                  Explore the fascinating world of dark chocolate with Espresso-Xoc. - Discover unique flavors and learn
+                  about the rich history of chocolate, - from ancient Aztec traditions to modern artisanal creations.
                 </p>
                 <a
                   href="https://espresso-xoc.com/"
@@ -69,7 +71,6 @@ export default function Playground() {
           </BackdropBlur>
         </motion.section>
 
-        {/* Interactive Elements Section */}
         <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={1}>
           <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
             <div className="flex flex-col md:flex-row items-center gap-8">

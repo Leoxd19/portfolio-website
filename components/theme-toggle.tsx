@@ -23,7 +23,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50">
+    <div className="z-50 sm:fixed sm:top-5 sm:left-1/2 sm:-translate-x-1/2">
       <BackdropBlur className="bg-white/80 dark:bg-black/80 border border-gray-200/50 dark:border-gray-800/50">
         <button
           onClick={toggleTheme}
