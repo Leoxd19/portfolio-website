@@ -53,7 +53,12 @@ export default function ConstantsVariablesGame() {
       <div className="flex justify-between items-center mb-6">
         <div className="relative w-24 h-24">
           <motion.div
-            className="w-24 h-24 rounded-full absolute top-0 left-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-4xl font-bold text-gray-800 dark:text-white transition-colors duration-300"
+            className="w-24 h-24 rounded-full absolute top-0 left-0 flex items-center justify-center text-4xl font-bold text-gray-800 dark:text-white overflow-hidden"
+            style={{
+              background: "linear-gradient(145deg, #f0f0f0, #e6e6e6)",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), inset 0 2px 3px rgba(255, 255, 255, 0.5)",
+              border: "2px solid #d4d4d4",
+            }}
             animate={{
               rotateY: flipping ? 1800 : 0,
               scale: flipping ? 1.2 : 1,

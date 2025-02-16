@@ -4,14 +4,30 @@ import { motion } from "framer-motion"
 import { Code, Globe, Server, RefreshCw } from "lucide-react"
 
 const services = [
-  { icon: Code, title: "Development", description: "Custom website development tailored to your needs" },
+  {
+    icon: Code,
+    title: "Development",
+    description: "Crafting modern websites with innovative technologies and best practices",
+    bullets: ["💻 Responsive design for all devices", "🎨 Intuitive user interfaces"],
+  },
   {
     icon: Globe,
     title: "Domain & Deployment",
-    description: "Handle domain purchase, configuration, and site deployment",
+    description: "Streamline your online presence from domain acquisition to site launch",
+    bullets: ["🌐 Strategic domain management", "🚀 Efficient deployment pipelines"],
   },
-  { icon: Server, title: "Hosting", description: "Set up and manage reliable hosting for your website" },
-  { icon: RefreshCw, title: "Maintenance & Updates", description: "Ongoing support, updates, and improvements" },
+  {
+    icon: Server,
+    title: "Hosting",
+    description: "Ensure robust, scalable, and secure hosting solutions for your website",
+    bullets: ["☁️ Reliable cloud infrastructure", "🔧 Proactive server maintenance"],
+  },
+  {
+    icon: RefreshCw,
+    title: "Maintenance & Updates",
+    description: "Keep your website current, secure, and performing at its best",
+    bullets: ["🔒 Regular security audits", "⚡ Continuous performance enhancements"],
+  },
 ]
 
 export function ServicesSection() {
@@ -32,7 +48,15 @@ export function ServicesSection() {
           <div key={service.title} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
             <service.icon className="w-8 h-8 mb-4 text-blue-600 dark:text-blue-400" />
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300">{service.description}</p>
+            <p className="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2">{service.description}</p>
+            <ul className="text-sm text-gray-900 dark:text-gray-100 space-y-2">
+              {service.bullets.map((bullet, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="mr-2">{bullet.slice(0, 2)}</span>
+                  <span className="font-medium">{bullet.slice(2)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
