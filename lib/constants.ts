@@ -1,5 +1,6 @@
 export const NAVIGATION_LINKS = [
   { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
   { href: "/resume", label: "Resume" },
   { href: "/playground", label: "Playground" },
 ] as const
