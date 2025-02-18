@@ -1,3 +1,8 @@
+/**
+ * Navigation component.
+ * Provides a responsive navigation menu for the application.
+ */
+
 "use client"
 
 import Link from "next/link"
@@ -5,7 +10,10 @@ import { usePathname } from "next/navigation"
 import { NAVIGATION_LINKS } from "@/lib/constants"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
-// Navigation component
+/**
+ * Renders a navigation bar with links to different pages.
+ * Highlights the current active page and applies hover effects.
+ */
 export function Navigation() {
   const pathname = usePathname()
 

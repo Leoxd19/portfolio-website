@@ -1,10 +1,18 @@
+/**
+ * ThemeToggle component.
+ * Allows users to switch between light and dark themes.
+ */
+
 "use client"
 
 import { Moon, Sun } from "lucide-react"
 import { useEffect, useState } from "react"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
-// Theme toggle component
+/**
+ * Renders a toggle button for switching between light and dark themes.
+ * Uses local storage to persist the user's theme preference.
+ */
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(true)
 

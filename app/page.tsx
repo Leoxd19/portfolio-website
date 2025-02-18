@@ -1,3 +1,8 @@
+/**
+ * Home page component.
+ * Displays a hero section with a background image and a call-to-action.
+ */
+
 "use client"
 
 import Image from "next/image"
@@ -8,7 +13,10 @@ import { ResponsiveContainer } from "@/components/responsive-container"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 import { motion } from "framer-motion"
 
-// Home page component
+/**
+ * Renders the main content of the home page, including a responsive
+ * background image, title, subtitle, and email contact button.
+ */
 export default function Home() {
   return (
     <div className="relative w-screen h-screen overflow-hidden">

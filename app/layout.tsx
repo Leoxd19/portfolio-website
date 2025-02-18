@@ -41,7 +41,10 @@ export const metadata = {
     generator: 'v0.dev'
 }
 
-// Root layout component
+/**
+ * RootLayout wraps all pages and applies common layout elements.
+ * It includes global styling, analytics, and responsive navigation.
+ */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
