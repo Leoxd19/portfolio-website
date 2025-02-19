@@ -3,19 +3,24 @@
   "short_name": "LG",
   "icons": [
     {
-      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-192x192-BMRNSwo38DJggeloe3yZ2j8xzTeaeL.png",
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-512x512-tVyt5PJebBFrzJkqKQ6HPplvyluyTM.png",
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apple-touch-icon-kWWS5gnuGYrR11jgH9Sza96Oq4aBR1.png",
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
       "sizes": "180x180",
       "type": "image/png"
     }

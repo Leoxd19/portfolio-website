@@ -4,6 +4,7 @@ import { LocationTime } from "@/components/location-time"
 import { Navigation } from "@/components/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { FloatingNavButton } from "@/components/floating-nav-button"
+import Watermark from "@/components/watermark"
 import "./globals.css"
 import type { ReactNode } from "react"
 
@@ -20,21 +21,27 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-16x16-cd8saEAW1XxUlkXFCZoNBNJfNglI7d.png",
-        sizes: "16x16",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+        sizes: "64x64",
         type: "image/png",
       },
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-bDPv6OXoiKs29Dyl9PKSEYf240Teii.png",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
         sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+        sizes: "16x16",
         type: "image/png",
       },
     ],
     apple: {
-      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apple-touch-icon-kWWS5gnuGYrR11jgH9Sza96Oq4aBR1.png",
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+      sizes: "180x180",
     },
     shortcut: {
-      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-bDPv6OXoiKs29Dyl9PKSEYf240Teii.png",
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
     },
   },
   manifest: "/site.webmanifest",
@@ -53,19 +60,25 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link
           rel="icon"
           type="image/png"
+          sizes="64x64"
+          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
           sizes="32x32"
-          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-bDPv6OXoiKs29Dyl9PKSEYf240Teii.png"
+          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-16x16-cd8saEAW1XxUlkXFCZoNBNJfNglI7d.png"
+          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apple-touch-icon-kWWS5gnuGYrR11jgH9Sza96Oq4aBR1.png"
+          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
@@ -83,6 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </div>
         <FloatingNavButton />
         <main className="min-h-screen">{children}</main>
+        <Watermark />
         <Analytics />
       </body>
     </html>

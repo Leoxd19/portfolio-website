@@ -3,17 +3,22 @@
 import { useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
 
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
 const startupIdeas = [
-  "Nimbus for cloud-based pet care?",
-  "Zephyr: Uber for wind energy?",
-  "Lumina: Netflix for interactive holograms?",
+  "Chronos: Time travel tourism agency",
   "EchoSphere: Spotify for ambient soundscapes?",
   "Quantum Quill: Medium for interdimensional blogging?",
   "Nebula Nosh: Airbnb for zero-gravity dining?",
-  "Chrono Capsule: Instagram for time travelers?",
   "Synapse: Tinder for AI matchmaking?",
   "Gaia's Whisper: Shazam for identifying plants?",
-  "Nexus Nap: Airbnb for power napping pods?",
   "Stellar Streaks: Uber for low-orbit space tours?",
   "Mindscape: Minecraft for building mental landscapes?",
   "Aether Academy: Coursera for psychic abilities?",
@@ -24,9 +29,14 @@ const startupIdeas = [
   "Dreamweaver: Etsy for commissioned lucid dreams?",
   "Flux Fitness: Peloton for antigravity workouts?",
   "Cipher: Duolingo for learning alien languages?",
+  "Holo-Harmony: Dating app for holographic companions",
+  "Quantum Palette: Photoshop for parallel universe art",
+  "Astral Express: Uber for astral projection journeys",
+  "Nano-Nurture: Tamagotchi for subatomic pet particles",
 ]
 
 export function AnimatedSearchBox() {
+  const [shuffledIdeas, setShuffledIdeas] = useState<string[]>([])
   const [state, setState] = useState({
     displayText: "",
     currentIdeaIndex: 0,
@@ -34,9 +44,13 @@ export function AnimatedSearchBox() {
     charIndex: 0,
   })
 
+  useEffect(() => {
+    setShuffledIdeas(shuffleArray(startupIdeas))
+  }, [])
+
   const typeText = useCallback(() => {
     setState((prevState) => {
-      const currentIdea = startupIdeas[prevState.currentIdeaIndex]
+      const currentIdea = shuffledIdeas[prevState.currentIdeaIndex]
       if (prevState.charIndex < currentIdea.length) {
         return {
           ...prevState,
@@ -50,7 +64,7 @@ export function AnimatedSearchBox() {
         }
       }
     })
-  }, [])
+  }, [shuffledIdeas])
 
   const deleteText = useCallback(() => {
     setState((prevState) => {
@@ -64,12 +78,12 @@ export function AnimatedSearchBox() {
         return {
           ...prevState,
           isTyping: true,
-          currentIdeaIndex: (prevState.currentIdeaIndex + 1) % startupIdeas.length,
+          currentIdeaIndex: (prevState.currentIdeaIndex + 1) % shuffledIdeas.length,
           charIndex: 0,
         }
       }
     })
-  }, [])
+  }, [shuffledIdeas])
 
   useEffect(() => {
     const timer = setTimeout(
@@ -102,23 +116,6 @@ export function AnimatedSearchBox() {
             className="ml-1 inline-block w-0.5 h-8 bg-gray-900 dark:bg-white"
           />
         </motion.div>
-        {/* Remove the following div and its contents */}
-        {/* <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-          <svg
-            className="w-6 h-6 text-gray-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </div> */}
       </div>
     </div>
   )
