@@ -1,4 +1,4 @@
-# Leos' Personal Website
+# Leo Gardberg's Personal Website
 
 Welcome to my personal website repository! This project showcases my take on a modern, responsive personal website, designed to highlight my skills, services, and projects in web development.
 
@@ -65,3 +65,4 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 Built and maintained by [Leo Gardberg](https://github.com/Leoxd19)
+
