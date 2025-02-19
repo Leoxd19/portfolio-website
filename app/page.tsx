@@ -26,11 +26,11 @@ export default function Home() {
   // State to control visibility of privacy message
   const [showPrivacyMessage, setShowPrivacyMessage] = useState(true)
 
-  // Effect to hide privacy message after 4 seconds
+  // Effect to hide privacy message after 8 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPrivacyMessage(false)
-    }, 4000)
+    }, 8000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -73,57 +73,37 @@ export default function Home() {
         </motion.div>
 
         {/* Animated privacy message */}
-        {showPrivacyMessage && (
-          <motion.div
-            className="absolute bottom-20 left-0 right-0 flex justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <AnimatePresence>
-              <motion.div
-                key="privacy-message"
-                initial={{ opacity: 1, scale: 1, rotateX: 0 }}
-                animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-                exit={{
-                  opacity: 0,
-                  scale: 0.8,
-                  rotateX: 90,
-                  transition: {
-                    duration: 0.8,
-                    ease: [0.4, 0, 0.2, 1],
-                  },
-                }}
-                style={{ transformOrigin: "bottom" }}
-              >
-                <BackdropBlur>
-                  <motion.div
-                    className="flex items-center gap-2 px-4 py-2"
-                    initial={{ opacity: 1 }}
-                    exit={{
-                      opacity: 0,
-                      transition: {
-                        duration: 0.2,
-                        delay: 0.4,
-                      },
-                    }}
-                  >
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/result-62KNlVjq44bkIJSKGGqSWrCkjhZt0j.png"
-                      alt="Sleeping red panda"
-                      width={48}
-                      height={48}
-                    />
-                    <p className="text-xs font-mono text-white">
-                      This website respects your privacy. No cookies or invasive tracking used.
-                    </p>
-                  </motion.div>
-                </BackdropBlur>
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {showPrivacyMessage && (
+            <motion.div
+              className="absolute bottom-20 left-0 right-0 flex justify-center"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              <BackdropBlur>
+                <motion.div
+                  className="flex items-center gap-2 px-4 py-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/result-62KNlVjq44bkIJSKGGqSWrCkjhZt0j.png"
+                    alt="Sleeping red panda"
+                    width={48}
+                    height={48}
+                  />
+                  <p className="text-xs font-mono text-white">
+                    This website respects your privacy. No cookies or invasive tracking used.
+                  </p>
+                </motion.div>
+              </BackdropBlur>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </ResponsiveContainer>
 
       {/* Footer */}
