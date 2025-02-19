@@ -7,6 +7,7 @@ import { FloatingNavButton } from "@/components/floating-nav-button"
 import Watermark from "@/components/watermark"
 import "./globals.css"
 import type { ReactNode } from "react"
+import ErrorBoundary from "@/components/error-boundary"
 
 // Load Inter font
 const inter = Inter({
@@ -95,7 +96,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <ThemeToggle />
         </div>
         <FloatingNavButton />
-        <main className="min-h-screen">{children}</main>
+        <ErrorBoundary>
+          <main className="min-h-screen">{children}</main>
+        </ErrorBoundary>
         <Watermark />
         <Analytics />
       </body>

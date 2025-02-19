@@ -1,12 +1,5 @@
-/**
- * ServicesSection component.
- * Displays a grid of service cards with interactive animations and a call-to-action button.
- */
-
-"use client"
-
 import type React from "react"
-import { Code, Globe, Server, RefreshCw } from "lucide-react"
+import { Code, Globe, Server, RefreshCw, BarChart, Palette } from "lucide-react"
 
 // Array of service objects, each containing icon, title, description, and bullet points
 const services = [
@@ -14,13 +7,13 @@ const services = [
     icon: Code,
     title: "Development",
     description: "Crafting modern websites with innovative technologies and best practices",
-    bullets: ["💻 Responsive design", "🎨 Intuitive UI"],
+    bullets: ["📱 Responsive design", "🖥️ Intuitive UI"],
   },
   {
     icon: Globe,
     title: "Domain & Deployment",
     description: "Streamline your online presence from domain acquisition to site launch",
-    bullets: ["🌐 Domain management", "🚀 Efficient deployment"],
+    bullets: ["🔗 Domain management", "🚀 Efficient deployment"],
   },
   {
     icon: Server,
@@ -34,6 +27,18 @@ const services = [
     description: "Keep your website current, secure, and performing at its best",
     bullets: ["🔒 Security audits", "⚡ Performance optimization"],
   },
+  {
+    icon: BarChart,
+    title: "Analytical Insight",
+    description: "Leverage data-driven strategies to enhance your online performance",
+    bullets: ["📊 User behavior analysis", "📈 Conversion optimization"],
+  },
+  {
+    icon: Palette,
+    title: "Creative Design",
+    description: "Craft a unique visual identity that resonates with your audience",
+    bullets: ["🎨 Brand development", "🖌️ Logo and theme design"],
+  },
 ]
 
 export function ServicesSection({ children }: { children: React.ReactNode }) {
@@ -46,7 +51,7 @@ export function ServicesSection({ children }: { children: React.ReactNode }) {
       </p>
 
       {/* Service cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {services.map((service, index) => (
           <div
             key={service.title}
