@@ -67,16 +67,9 @@ export default function Home() {
             Hi there, I'm Leo.
           </h1>
           <p className={`text-3xl mb-6 text-white ${poppins.className} text-shadow-sm`}>Let's build together!</p>
-          <a
-            href={`mailto:${EMAIL_ADDRESS}`}
-            className="inline-block no-underline hover:underline"
-            onClick={(e) => {
-              e.preventDefault()
-              window.location.href = `mailto:${EMAIL_ADDRESS}`
-            }}
-          >
+          <Link href={`mailto:${EMAIL_ADDRESS}`} className="inline-block">
             <StyledEmail email={EMAIL_ADDRESS} />
-          </a>
+          </Link>
         </motion.div>
 
         {/* Animated privacy message */}

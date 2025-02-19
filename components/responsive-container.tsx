@@ -11,19 +11,21 @@ export function ResponsiveContainer({ children, className = "" }: ResponsiveCont
   const [scale, setScale] = useState(1)
 
   useEffect(() => {
+    // Function to handle resizing and calculate the appropriate scale
     function handleResize() {
-      try {
-        const viewportHeight = window.innerHeight
-        const contentHeight = document.body.scrollHeight
-        const newScale = Math.min(viewportHeight / contentHeight, 1)
-        setScale(newScale)
-      } catch (error) {
-        console.error("Error in ResponsiveContainer handleResize:", error)
-      }
+      const viewportHeight = window.innerHeight
+      const contentHeight = document.body.scrollHeight
+      const newScale = Math.min(viewportHeight / contentHeight, 1)
+      setScale(newScale)
     }
 
+    // Initial call to set the scale
     handleResize()
+
+    // Add event listener for window resize
     window.addEventListener("resize", handleResize)
+
+    // Cleanup function to remove the event listener
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
