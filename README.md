@@ -1,6 +1,6 @@
-# Leo Gardberg's Personal Website
+# My Personal Website.
 
-Welcome to my personal website repository! This project showcases my take on a modern, responsive personal website, designed to highlight my skills, services, and projects in web development.
+This project showcases my take on a modern & responsive personal website.
 
 ## Introduction
 
