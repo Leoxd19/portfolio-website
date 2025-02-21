@@ -1,6 +1,6 @@
-# Leo Gardberg's Personal Website
+# My Personal Website
 
-Welcome to my personal website repository! This project showcases my take on a modern, responsive personal website, designed to highlight my skills, services, and projects in web development.
+This is my personal website repository! This project showcases my take on a modern, responsive personal website.
 
 ## Introduction
 
@@ -16,29 +16,7 @@ This project leverages several modern web technologies and tools:
 - **Tailwind CSS**: Utility-first CSS framework for rapid UI development
 - **Framer Motion**: Animation library for React
 - **Vercel**: Platform for deployment and hosting
-- **Lucide React**: Icon library
-
-## Installation and Setup
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-   \```
-   git clone https://github.com/YourUsername/your-repo-name.git
-   cd your-repo-name
-   \```
-
-2. Install dependencies:
-   \```
-   npm install
-   \```
-
-3. Run the development server:
-   \```
-   npm run dev
-   \```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+- **Lucide React**: Icon Library
 
 ## Key Features
 
