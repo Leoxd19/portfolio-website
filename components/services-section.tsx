@@ -11,22 +11,24 @@ export function ServicesSection() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <AnimatedSearchBox />
-      {/* Rest of the ServicesSection component */}
-      <div className="flex items-center justify-center mb-8">
-        <div className="flex flex-col items-center mr-4">
-          <span className="text-4xl mb-2">💡</span>
+      {/* Updated header section for better mobile layout */}
+      <div className="flex flex-col items-center mb-8 text-center">
+        <div className="flex items-center justify-center mb-4">
+          <span className="text-4xl mr-2">💡</span>
           <span className="text-4xl">🐼</span>
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Streamline Your Online Presence</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+          Streamline Your Online Presence
+        </h2>
       </div>
-      <p className="text-xl text-center text-gray-900 dark:text-white mb-12 max-w-3xl mx-auto">
+      <p className="text-lg sm:text-xl text-center text-gray-900 dark:text-white mb-12 max-w-3xl mx-auto">
         Elevate your digital presence with tailored web solutions. While website creation is more accessible than ever,
         partnering with someone experienced in modern web technologies can streamline the process, saving you time and
         ensuring a polished, high-performance result.
       </p>
 
-      {/* Service grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+      {/* Service grid - updated for better mobile layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-12">
         {services.map((service, index) => (
           <motion.div
             key={service.title}
@@ -80,7 +82,6 @@ export function ServicesSection() {
           <div className="absolute inset-0 bg-white dark:bg-black opacity-0 hover:opacity-10 transition-opacity duration-300" />
         </a>
       </div>
-      {/* ... rest of the component ... */}
     </div>
   )
 }

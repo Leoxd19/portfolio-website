@@ -44,9 +44,9 @@ export default function ResumeContent() {
 
   return (
     <ResponsiveContainer className="z-0">
-      <div className="flex flex-col items-center space-y-8 py-12">
-        <div className="flex flex-col items-center mb-4">
-          <p className="text-base font-semibold text-blue-600 dark:text-blue-400 text-center mb-2">
+      <div className="flex flex-col items-center space-y-8 py-12 px-4">
+        <div className="flex flex-col items-center mb-4 text-center">
+          <p className="text-base font-semibold text-blue-600 dark:text-blue-400 mb-2">
             This button only works for integrated users. Please contact me for my latest resume.
           </p>
           <svg
