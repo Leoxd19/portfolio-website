@@ -8,6 +8,7 @@ interface BackdropBlurProps {
   className?: string
 }
 
+// BackdropBlur component for creating a blurred backdrop effect
 export function BackdropBlur({ children, className = "" }: BackdropBlurProps) {
   return (
     <motion.div

@@ -1,16 +1,10 @@
-"use client"
+import ServicesContent from "./services-content"
 
-import { ServicesSection } from "@/components/services-section"
+export const metadata = {
+  title: "Services - Leo Gardberg",
+}
 
 export default function ServicesPage() {
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="pt-24 sm:pt-32">
-        {" "}
-        {/* Added padding-top here */}
-        <ServicesSection />
-      </div>
-    </div>
-  )
+  return <ServicesContent />
 }
 

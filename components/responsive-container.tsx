@@ -31,7 +31,7 @@ export function ResponsiveContainer({ children, className = "" }: ResponsiveCont
 
   return (
     <div
-      className={`w-full h-screen flex items-center justify-center ${className}`}
+      className={`w-full min-h-screen flex items-center justify-center pb-16 ${className}`}
       style={{
         transform: `scale(${scale})`,
         transformOrigin: "center center",

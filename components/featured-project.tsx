@@ -55,6 +55,7 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
           href="mailto:nimbusvaultai@dev"
           className="inline-block px-6 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-sm font-mono hover:scale-105"
           aria-label="Contact Nimbus Vault AI team"
+          rel="noopener noreferrer"
         >
           nimbusvaultai@dev
         </a>
