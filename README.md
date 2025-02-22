@@ -16,7 +16,7 @@ This project leverages several modern web technologies and tools:
 - Framer Motion: Animation library for React
 - Vercel: Platform for deployment and hosting
 - Lucide React: Icon Library
-- 
+  
 ## Key Features
 
 - Responsive Design: Optimized for a wide range of devices and screen sizes
