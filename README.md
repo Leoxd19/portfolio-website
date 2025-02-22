@@ -9,8 +9,6 @@ This website serves as a digital portfolio and professional landing page. It's b
 ## Technologies Used
 
 This project leverages several modern web technologies and tools:
-
-<<<<<<< HEAD
 - Next.js: React framework for server-side rendering and static site generation
 - React: JavaScript library for building user interfaces
 - TypeScript: Typed superset of JavaScript for improved developer experience
@@ -18,16 +16,7 @@ This project leverages several modern web technologies and tools:
 - Framer Motion: Animation library for React
 - Vercel: Platform for deployment and hosting
 - Lucide React: Icon Library
-=======
-- **Next.js**: React framework for server-side rendering and static site generation
-- **React**: JavaScript library for building user interfaces
-- **TypeScript**: Typed superset of JavaScript for improved developer experience
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
-- **Framer Motion**: Animation library for React
-- **Vercel**: Platform for deployment and hosting
-- **Lucide React**: Icon Library
->>>>>>> 45411e5af31472a4038470befefd887b248657f1
-
+- 
 ## Key Features
 
 - Responsive Design: Optimized for a wide range of devices and screen sizes
@@ -35,8 +24,8 @@ This project leverages several modern web technologies and tools:
 - Dynamic Components: Interactive elements like the services cards and navigation
 - Animated Transitions: Smooth page transitions and element animations
 - SEO Optimized: Structured for better search engine visibility
-- Performance Focused: Optimized for fast loading and smooth interactions
-
+- Performance-Focused: Optimized for fast loading and smooth interactions
+- 
 ## Contributing
 
 While this is primarily a personal project, I'm open to feedback and suggestions. If you have ideas for improvements or spot any issues, please feel free to:
