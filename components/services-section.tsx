@@ -8,13 +8,17 @@ import { AnimatedSearchBox } from "@/components/animated-search-box"
 export function ServicesSection() {
   const [selectedService, setSelectedService] = useState<number | null>(null)
 
+  const toggleService = (index: number) => {
+    setSelectedService(selectedService === index ? null : index)
+  }
+
   return (
     <div className="w-full max-w-4xl mx-auto">
       <AnimatedSearchBox />
-      {/* Updated header section for better mobile layout */}
+      {/* Header section */}
       <div className="flex flex-col items-center mb-8 text-center">
-        <div className="flex items-center justify-center mb-4">
-          <span className="text-4xl mr-2">💡</span>
+        <div className="flex flex-col items-center justify-center mb-4">
+          <span className="text-4xl mb-2">💡</span>
           <span className="text-4xl">🐼</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
@@ -27,50 +31,61 @@ export function ServicesSection() {
         ensuring a polished, high-performance result.
       </p>
 
-      {/* Service grid - updated for better mobile layout */}
+      {/* Service grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-12">
         {services.map((service, index) => (
           <motion.div
             key={service.title}
-            className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ease-out ${
+            className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ease-out h-[180px] overflow-hidden ${
               selectedService === index
                 ? "bg-blue-100 dark:bg-blue-900 shadow-md"
                 : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 shadow-sm hover:shadow-md"
             }`}
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setSelectedService(index === selectedService ? null : index)}
+            onClick={() => toggleService(index)}
+            layout
           >
-            <service.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 mb-2" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{service.title}</h3>
+            <div className="flex flex-col h-full">
+              <div className="flex items-start mb-2">
+                <service.icon className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 flex-shrink-0" />
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{service.title}</h3>
+              </div>
+              <AnimatePresence>
+                {selectedService === index ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-grow overflow-y-auto"
+                  >
+                    <p className="text-base text-gray-900 dark:text-gray-100 mb-2 font-medium leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-1">
+                      {service.bullets.map((bullet, bulletIndex) => (
+                        <li key={bulletIndex} className="flex items-start text-xs text-gray-700 dark:text-gray-300">
+                          <span className="mr-2 text-blue-600 dark:text-blue-400">{bullet.slice(0, 2)}</span>
+                          <span>{bullet.slice(2)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ) : (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-base text-gray-900 dark:text-gray-100 font-medium leading-relaxed"
+                  >
+                    {service.description}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         ))}
       </div>
-
-      {/* Service details */}
-      <AnimatePresence>
-        {selectedService !== null && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-8"
-          >
-            <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-              {services[selectedService].title}
-            </h3>
-            <p className="text-base text-gray-900 dark:text-white mb-4">{services[selectedService].description}</p>
-            <ul className="space-y-2">
-              {services[selectedService].bullets.map((bullet, index) => (
-                <li key={index} className="flex items-start text-sm text-gray-900 dark:text-white">
-                  <span className="mr-2 text-blue-600 dark:text-blue-400">{bullet.slice(0, 2)}</span>
-                  <span>{bullet.slice(2)}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Call-to-action button */}
       <div className="text-center mt-8">
@@ -86,43 +101,43 @@ export function ServicesSection() {
   )
 }
 
-// Array of service objects
+// Array of service objects with updated descriptions
 const services = [
   {
     icon: Code,
     title: "Advanced Development",
-    description: "Building modern websites with innovative technologies",
-    bullets: ["💻 Responsive, adaptive design", "🎨 User-centric interfaces"],
+    description: "Modern, responsive websites with the latest technologies",
+    bullets: ["💻 Adaptive design", "🎨 User-centric UIs"],
   },
   {
     icon: Globe,
     title: "Smooth Deployment",
-    description: "Streamlining your online journey from concept to launch",
-    bullets: ["🌐 Comprehensive domain handling", "🚀 Efficient site deployment"],
+    description: "Streamlined launch from concept to live site",
+    bullets: ["🌐 Domain setup", "🚀 Efficient deployment"],
   },
   {
     icon: Server,
     title: "Reliable Hosting",
-    description: "Providing scalable and secure infrastructure solutions",
-    bullets: ["☁️ Optimized cloud architecture", "⛨ Robust security measures"],
+    description: "Scalable and secure infrastructure solutions",
+    bullets: ["☁️ Optimized architecture", "⛨ Robust security"],
   },
   {
     icon: RefreshCw,
     title: "Ongoing Maintenance",
-    description: "Keeping your website current and performing at its best",
-    bullets: ["🔄 Regular updates and improvements", "⚡ Continuous optimization"],
+    description: "Keep your site current and high-performing",
+    bullets: ["🔄 Regular updates", "⚡ Continuous optimization"],
   },
   {
     icon: BarChart,
     title: "Analytical Insights",
-    description: "Harnessing data to enhance your online performance",
-    bullets: ["📊 User behavior analysis", "🎯 Conversion rate optimization"],
+    description: "Data-driven enhancements for your online presence",
+    bullets: ["📊 User behavior analysis", "🎯 Conversion optimization"],
   },
   {
     icon: Palette,
     title: "Creative Design",
-    description: "Crafting unique visual identities that resonate and engage",
-    bullets: ["🎨 Comprehensive brand development", "✨ Custom graphics and illustrations"],
+    description: "Unique visual identities that captivate users",
+    bullets: ["🎨 Brand development", "✨ Custom graphics"],
   },
 ]
 

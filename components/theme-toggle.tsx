@@ -2,7 +2,7 @@
 
 import { Moon, Sun } from "lucide-react"
 import { useEffect, useState } from "react"
-import { BackdropBlur } from "@/components/ui/backdrop-blur"
+import { motion } from "framer-motion"
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(true)
@@ -23,21 +23,20 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
-      <BackdropBlur className="bg-white/80 dark:bg-black/80 border border-gray-200/50 dark:border-gray-800/50">
-        <button
-          onClick={toggleTheme}
-          className="p-2 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300"
-          aria-label="Toggle theme"
-        >
-          {isDark ? (
-            <Sun className="w-4 h-4 transition-transform duration-300 ease-in-out" />
-          ) : (
-            <Moon className="w-4 h-4 transition-transform duration-300 ease-in-out" />
-          )}
-        </button>
-      </BackdropBlur>
-    </div>
+    <button
+      onClick={toggleTheme}
+      className="relative w-12 h-6 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-blue-600"
+      aria-label="Toggle theme"
+    >
+      <motion.div
+        className="absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center"
+        animate={{ x: isDark ? 24 : 0 }}
+        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+      >
+        {isDark ? <Moon className="w-3 h-3 text-white" /> : <Sun className="w-3 h-3 text-yellow-500" />}
+      </motion.div>
+      <span className="sr-only">{isDark ? "Switch to light mode" : "Switch to dark mode"}</span>
+    </button>
   )
 }
 

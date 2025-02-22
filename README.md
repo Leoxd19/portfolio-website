@@ -1,6 +1,6 @@
-# Leo Gardberg's Personal Website
+# My Personal Website
 
-Welcome to my personal website repository! This project showcases my take on a modern, responsive personal website, designed to highlight my skills, services, and projects in web development.
+This is my personal website repository! This project showcases my take on a modern, responsive personal website.
 
 ## Introduction
 
@@ -10,44 +10,22 @@ This website serves as a digital portfolio and professional landing page. It's b
 
 This project leverages several modern web technologies and tools:
 
-- **Next.js**: React framework for server-side rendering and static site generation
-- **React**: JavaScript library for building user interfaces
-- **TypeScript**: Typed superset of JavaScript for improved developer experience
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
-- **Framer Motion**: Animation library for React
-- **Vercel**: Platform for deployment and hosting
-- **Lucide React**: Icon library
-
-## Installation and Setup
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-   \```
-   git clone https://github.com/YourUsername/your-repo-name.git
-   cd your-repo-name
-   \```
-
-2. Install dependencies:
-   \```
-   npm install
-   \```
-
-3. Run the development server:
-   \```
-   npm run dev
-   \```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+- Next.js: React framework for server-side rendering and static site generation
+- React: JavaScript library for building user interfaces
+- TypeScript: Typed superset of JavaScript for improved developer experience
+- Tailwind CSS: Utility-first CSS framework for rapid UI development
+- Framer Motion: Animation library for React
+- Vercel: Platform for deployment and hosting
+- Lucide React: Icon Library
 
 ## Key Features
 
-- **Responsive Design**: Optimized for a wide range of devices and screen sizes
-- **Dark/Light Mode**: Toggle between dark and light themes for comfortable viewing
-- **Dynamic Components**: Interactive elements like the services cards and navigation
-- **Animated Transitions**: Smooth page transitions and element animations
-- **SEO Optimized**: Structured for better search engine visibility
-- **Performance Focused**: Optimized for fast loading and smooth interactions
+- Responsive Design: Optimized for a wide range of devices and screen sizes
+- Dark/Light Mode: Toggle between dark and light themes for comfortable viewing
+- Dynamic Components: Interactive elements like the services cards and navigation
+- Animated Transitions: Smooth page transitions and element animations
+- SEO Optimized: Structured for better search engine visibility
+- Performance Focused: Optimized for fast loading and smooth interactions
 
 ## Contributing
 
@@ -60,9 +38,7 @@ Please ensure that your contributions align with the overall design and purpose 
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the MIT License.
 
----
-
-Built and maintained by [Leo Gardberg](https://github.com/Leoxd19)
+Built and maintained by Leo Gardberg
 

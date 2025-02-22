@@ -97,30 +97,6 @@ export default function HomeContent() {
           )}
         </AnimatePresence>
       </ResponsiveContainer>
-
-      {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-5">
-        <motion.div
-          className="z-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-        >
-          <BackdropBlur>
-            <p className="text-sm font-mono text-black dark:text-white px-4 py-2">
-              Built and Maintained by{" "}
-              <Link
-                href="https://github.com/Leoxd19"
-                className="underline hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leo Gardberg
-              </Link>
-            </p>
-          </BackdropBlur>
-        </motion.div>
-      </div>
     </div>
   )
 }

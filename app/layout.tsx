@@ -2,9 +2,9 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 import { LocationTime } from "@/components/location-time"
 import { Navigation } from "@/components/navigation"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { FloatingNavButton } from "@/components/floating-nav-button"
 import Watermark from "@/components/watermark"
+import { Footer } from "@/components/footer"
 import "./globals.css"
 import type { ReactNode } from "react"
 
@@ -33,7 +33,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased`}>
+      <body
+        className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased flex flex-col min-h-screen`}
+      >
         <div className="sm:hidden flex flex-col items-end space-y-2 p-4">
           <Navigation />
         </div>
@@ -42,9 +44,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Navigation />
         </div>
         <FloatingNavButton />
-        <main className="min-h-screen">{children}</main>
+        <main className="flex-grow flex flex-col">{children}</main>
+        <Footer />
         <Watermark />
-        <ThemeToggle />
         <Analytics />
       </body>
     </html>
