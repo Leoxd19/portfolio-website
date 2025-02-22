@@ -25,7 +25,7 @@ This project leverages several modern web technologies and tools:
 - Animated Transitions: Smooth page transitions and element animations
 - SEO Optimized: Structured for better search engine visibility
 - Performance-Focused: Optimized for fast loading and smooth interactions
-- 
+  
 ## Contributing
 
 While this is primarily a personal project, I'm open to feedback and suggestions. If you have ideas for improvements or spot any issues, please feel free to:
