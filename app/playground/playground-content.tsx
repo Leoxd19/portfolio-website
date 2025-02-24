@@ -25,10 +25,10 @@ export default function PlaygroundContent() {
   }, [startAnimation])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-black transition-colors duration-300 overflow-y-auto pt-20">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 overflow-y-auto pt-20">
       <div className="max-w-4xl mx-auto px-4 py-16 space-y-24">
         <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={0}>
-          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-gray-100 dark:bg-gray-800">
             <DynamicFeaturedProject
               title="Secure AI-Powered Password Management"
               description="Revolutionizing how we store and access sensitive information with advanced AI integration."
@@ -40,11 +40,11 @@ export default function PlaygroundContent() {
         </motion.section>
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={1}>
-          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-gray-100 dark:bg-gray-800">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
               <div className="w-full md:w-3/5 flex flex-col items-center md:items-start text-center md:text-left">
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Espresso-Xoc</h2>
-                <p className="text-base md:text-lg text-gray-900 dark:text-white mb-6 leading-relaxed">
+                <p className="text-base md:text-lg text-black dark:text-white mb-6 leading-relaxed">
                   Explore the fascinating world of dark chocolate with Espresso-Xoc. Discover unique flavors and learn
                   about the rich history of chocolate, from ancient Aztec traditions to modern artisanal creations.
                 </p>
@@ -74,7 +74,7 @@ export default function PlaygroundContent() {
         </motion.section>
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={2}>
-          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/50 dark:bg-black/50">
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-gray-100 dark:bg-gray-800">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/2">
                 <div className="relative rounded-lg overflow-hidden shadow-lg">

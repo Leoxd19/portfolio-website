@@ -10,7 +10,6 @@ This website serves as a digital portfolio and professional landing page. It's b
 
 This project leverages several modern web technologies and tools:
 
-<<<<<<< HEAD
 - Next.js: React framework for server-side rendering and static site generation
 - React: JavaScript library for building user interfaces
 - TypeScript: Typed superset of JavaScript for improved developer experience
@@ -18,15 +17,6 @@ This project leverages several modern web technologies and tools:
 - Framer Motion: Animation library for React
 - Vercel: Platform for deployment and hosting
 - Lucide React: Icon Library
-=======
-- **Next.js**: React framework for server-side rendering and static site generation
-- **React**: JavaScript library for building user interfaces
-- **TypeScript**: Typed superset of JavaScript for improved developer experience
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
-- **Framer Motion**: Animation library for React
-- **Vercel**: Platform for deployment and hosting
-- **Lucide React**: Icon Library
->>>>>>> 45411e5af31472a4038470befefd887b248657f1
 
 ## Key Features
 

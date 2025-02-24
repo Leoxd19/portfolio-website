@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { StyledEmail } from "@/components/ui/styled-email"
 import { EMAIL_ADDRESS, BACKGROUND_IMAGE_URL } from "@/lib/constants"
 import { ResponsiveContainer } from "@/components/responsive-container"
@@ -55,13 +54,33 @@ export default function HomeContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <h1 className={`text-5xl font-bold mb-4 text-white ${poppins.className} text-shadow-sm`}>
+          <h1
+            className={`text-5xl font-bold mb-4 text-white ${poppins.className} text-shadow-sm`}
+            style={{
+              textShadow: `-1px -1px 0 #000, 
+                 1px -1px 0 #000, 
+                -1px 1px 0 #000, 
+                 1px 1px 0 #000,
+                 2px 2px 4px rgba(0,0,0,0.5)`,
+            }}
+          >
             Hi there, I'm Leo.
           </h1>
-          <p className={`text-3xl mb-6 text-white ${poppins.className} text-shadow-sm`}>Let's build together!</p>
-          <Link href={`mailto:${EMAIL_ADDRESS}`} className="inline-block">
+          <p
+            className={`text-3xl mb-6 text-white ${poppins.className} text-shadow-sm`}
+            style={{
+              textShadow: `-1px -1px 0 #000, 
+                 1px -1px 0 #000, 
+                -1px 1px 0 #000, 
+                 1px 1px 0 #000,
+                 1px 1px 3px rgba(0,0,0,0.3)`,
+            }}
+          >
+            Let's build together!
+          </p>
+          <a href={`mailto:${EMAIL_ADDRESS}`} className="inline-block">
             <StyledEmail email={EMAIL_ADDRESS} />
-          </Link>
+          </a>
         </motion.div>
 
         {/* Animated privacy message */}
