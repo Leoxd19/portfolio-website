@@ -1,56 +1,36 @@
-import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/react"
-import { LocationTime } from "@/components/location-time"
-import { Navigation } from "@/components/navigation"
-import { FloatingNavButton } from "@/components/floating-nav-button"
-import Watermark from "@/components/watermark"
-import { Footer } from "@/components/footer"
-import "./globals.css"
-import type { ReactNode } from "react"
+import type { Metadata, ReactNode } from "react"
+import ClientRootLayout from "./client"
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-})
-
-export const metadata = {
+export const metadata: Metadata = {
+  title: {
+    default: "Leo Gardberg",
+    template: "%s | Leo Gardberg",
+  },
+  description: "Personal portfolio of Leo Gardberg, Full-Stack Web Developer",
   icons: {
     icon: [
-      { url: "/icon-64x64.png", sizes: "64x64", type: "image/png" },
-      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+        sizes: "32x32",
+      },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+        sizes: "192x192",
+      },
     ],
-    apple: { url: "/apple-icon.png", sizes: "180x180" },
-    shortcut: { url: "/shortcut-icon.png" },
+    apple: {
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+      sizes: "180x180",
+    },
+    shortcut: {
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+    },
   },
-  manifest: "/site.webmanifest",
     generator: 'v0.dev'
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
-      <body
-        className={`${inter.className} bg-white dark:bg-black text-black dark:text-white antialiased flex flex-col min-h-screen`}
-      >
-        <div className="sm:hidden flex flex-col items-end space-y-2 p-4">
-          <Navigation />
-        </div>
-        <div className="hidden sm:block">
-          <LocationTime />
-          <Navigation />
-        </div>
-        <FloatingNavButton />
-        <main className="flex-grow flex flex-col">{children}</main>
-        <Footer />
-        <Watermark />
-        <Analytics />
-      </body>
-    </html>
-  )
+  return <ClientRootLayout>{children}</ClientRootLayout>
 }
 
 

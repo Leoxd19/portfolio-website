@@ -1,8 +1,8 @@
 import HomeContent from "./home-content"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Leo Gardberg - Portfolio",
-  description: "Personal portfolio of Leo Gardberg, Full-Stack Web Developer",
+export const metadata: Metadata = {
+  title: "Home | Leo Gardberg",
 }
 
 export default function Home() {

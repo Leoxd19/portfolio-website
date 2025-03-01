@@ -1,4 +1,4 @@
-import type React from "react"
+import type { ReactNode } from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -6,11 +6,7 @@ export const metadata: Metadata = {
   description: "Explore interactive projects and experiments in Leo Gardberg's playground.",
 }
 
-export default function PlaygroundLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function PlaygroundLayout({ children }: { children: ReactNode }) {
   return <>{children}</>
 }
 

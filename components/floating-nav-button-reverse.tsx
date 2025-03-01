@@ -3,20 +3,16 @@
 import { useState, useEffect, useCallback } from "react"
 import { useRouter, usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft } from "lucide-react"
 import { NAVIGATION_LINKS } from "@/lib/constants"
-import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
 export function FloatingNavButtonReverse() {
   const router = useRouter()
   const pathname = usePathname()
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const index = NAVIGATION_LINKS.findIndex((link) => link.href === pathname)
     setCurrentIndex(index !== -1 ? index : 0)
-    setIsVisible(index > 0)
   }, [pathname])
 
   const handleClick = useCallback(() => {
@@ -25,45 +21,35 @@ export function FloatingNavButtonReverse() {
     router.push(NAVIGATION_LINKS[prevIndex].href)
   }, [currentIndex, router])
 
-  const containerVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -50 },
-  }
-
   const buttonVariants = {
-    initial: { y: 0 },
-    bounce: {
-      y: [0, -10, 0],
-      transition: { duration: 0.5, times: [0, 0.5, 1], ease: "easeInOut" },
-    },
+    initial: { opacity: 0, x: -10 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -10 },
+    hover: { x: -5, boxShadow: "0 0 15px rgba(0,0,0,0.2)" },
   }
-
-  if (!isVisible) return null
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="fixed left-5 top-1/2 transform -translate-y-1/2 z-20"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+      <motion.button
+        className="fixed left-6 top-1/2 transform -translate-y-1/2 z-20 w-12 h-24 flex items-center justify-center focus:outline-none group bg-orange-500 rounded-r-full border-2 border-black"
+        onClick={handleClick}
+        variants={buttonVariants}
+        initial="initial"
+        animate="animate"
         exit="exit"
-        transition={{ duration: 0.3 }}
+        whileHover="hover"
       >
-        <BackdropBlur>
-          <motion.button
-            onClick={handleClick}
-            className="p-3 rounded-full text-black dark:text-white hover:text-primary dark:hover:text-primary transition-colors duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            variants={buttonVariants}
-            initial="initial"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </motion.button>
-        </BackdropBlur>
-      </motion.div>
+        <span className="sr-only">Previous Page</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          className="w-8 h-8 text-black transition-transform duration-300 ease-in-out transform group-hover:scale-110"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </motion.button>
     </AnimatePresence>
   )
 }

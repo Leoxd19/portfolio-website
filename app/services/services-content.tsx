@@ -1,16 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Code, Globe, Server, RefreshCw, BarChart, Palette } from "lucide-react"
 import { AnimatedSearchBox } from "@/components/animated-search-box"
 
-export default function ServicesContent() {
-  const [selectedService, setSelectedService] = useState<number | null>(null)
+const MotionCard = motion.div
 
-  const toggleService = (index: number) => {
-    setSelectedService(selectedService === index ? null : index)
-  }
+export default function ServicesContent() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
+
+  const toggleService = useCallback((index: number) => {
+    setExpandedCard((prevIndex) => (prevIndex === index ? null : index))
+  }, [])
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -30,63 +32,60 @@ export default function ServicesContent() {
           </p>
           <AnimatedSearchBox />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <motion.div
+            <MotionCard
               key={service.title}
-              className="cursor-pointer"
-              onClick={() => toggleService(index)}
-              whileHover={{ scale: 1.03, transition: { duration: 0.2, ease: "easeInOut" } }}
-              whileTap={{ scale: 0.98, transition: { duration: 0.2, ease: "easeInOut" } }}
               layout
+              transition={{
+                layout: { duration: 0.3, ease: "easeOut" },
+              }}
+              className={`cursor-pointer p-6 rounded-2xl bg-gray-100 dark:bg-gray-800 ${
+                expandedCard === index ? "shadow-lg" : "shadow-md hover:shadow-lg"
+              }`}
+              onClick={() => toggleService(index)}
             >
-              <motion.div
-                className="h-full p-6 rounded-2xl bg-gray-100 dark:bg-gray-800 transition-all duration-300"
-                layout
-              >
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center mb-4">
-                    <service.icon className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 flex-shrink-0" />
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{service.title}</h2>
-                  </div>
-                  <AnimatePresence initial={false}>
-                    {selectedService === index ? (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="flex-grow overflow-hidden"
-                      >
-                        <p className="text-base text-gray-900 dark:text-white mb-4 leading-relaxed">
-                          {service.description}
-                        </p>
-                        <ul className="space-y-2">
-                          {service.bullets.map((bullet, bulletIndex) => (
-                            <li key={bulletIndex} className="flex items-start text-sm text-gray-900 dark:text-white">
-                              <span className="mr-2 text-blue-600 dark:text-blue-400">{bullet.slice(0, 2)}</span>
-                              <span>{bullet.slice(2)}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    ) : (
-                      <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="text-base text-gray-900 dark:text-white"
-                      >
-                        {service.description}
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
-                </div>
+              <motion.div layout className="flex items-center mb-4">
+                <service.icon className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 flex-shrink-0" />
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{service.title}</h2>
               </motion.div>
-            </motion.div>
+              <AnimatePresence mode="wait">
+                {expandedCard === index ? (
+                  <motion.div
+                    key="expanded"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <p className="text-base text-gray-900 dark:text-white mb-4 leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {service.bullets.map((bullet, bulletIndex) => (
+                        <li key={bulletIndex} className="flex items-start text-sm text-gray-900 dark:text-white">
+                          <span className="mr-2 text-blue-600 dark:text-blue-400">{bullet.slice(0, 2)}</span>
+                          <span>{bullet.slice(2)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ) : (
+                  <motion.p
+                    key="collapsed"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-base text-gray-900 dark:text-white"
+                  >
+                    {service.description}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </MotionCard>
           ))}
-        </div>
+        </motion.div>
         <div className="text-center mt-12">
           <a
             href="mailto:leo.gardberg@gmail.com"

@@ -1,7 +1,7 @@
 import ServicesContent from "./services-content"
 
 export const metadata = {
-  title: "Services - Leo Gardberg",
+  title: "Services",
 }
 
 export default function ServicesPage() {

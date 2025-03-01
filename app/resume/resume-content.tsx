@@ -43,61 +43,62 @@ export default function ResumeContent() {
   )
 
   return (
-    <ResponsiveContainer className="z-0">
-      <div className="flex flex-col items-center space-y-8 py-12 px-4">
-        <div className="flex flex-col items-center mb-4 text-center">
-          <p className="text-base font-semibold text-blue-600 dark:text-blue-400 mb-2">
-            This button only works for integrated users. Please contact me for my latest resume.
-          </p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-blue-600 dark:text-blue-400 animate-bounce"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <ResponsiveContainer className="z-0">
+        <div className="flex flex-col items-center space-y-8 py-12 px-4">
+          <div className="flex flex-col items-center mb-4 text-center">
+            <p className="text-base font-semibold text-gray-900 dark:text-white mb-2">
+              This button only works for integrated users. Please contact me for my latest resume.
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-900 dark:text-white animate-bounce"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+
+          <motion.a
+            href="/Leo_Gardberg_Resume.pdf"
+            download="Leo_Gardberg_Resume.pdf"
+            className="relative px-8 py-4 bg-transparent text-gray-900 dark:text-white rounded-lg overflow-hidden border border-current/20 transition-colors duration-300 ease-in-out"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
+            <span className="relative z-10 font-mono text-sm tracking-normal">Download Resume</span>
+            <motion.div
+              className="absolute inset-0 bg-current/10"
+              initial={{ x: "-100%" }}
+              animate={{ x: isHovered ? 0 : "-100%" }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.div
+              className="absolute left-0 bottom-0 h-1 bg-current"
+              initial={{ width: "0%" }}
+              animate={progressControls}
+            />
+          </motion.a>
 
-        <motion.a
-          href="/Leo_Gardberg_Resume.pdf"
-          download="Leo_Gardberg_Resume.pdf"
-          className="relative px-8 py-4 bg-transparent text-current rounded-lg overflow-hidden border border-current/20 transition-colors duration-300 ease-in-out"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <span className="relative z-10 font-mono text-sm tracking-normal">Download Resume</span>
-          <motion.div
-            className="absolute inset-0 bg-current/10"
-            initial={{ x: "-100%" }}
-            animate={{ x: isHovered ? 0 : "-100%" }}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.div
-            className="absolute left-0 bottom-0 h-1 bg-current"
-            initial={{ width: "0%" }}
-            animate={progressControls}
-          />
-        </motion.a>
+          <div className="w-full flex justify-center my-6">
+            <DiscordBanner username="Leoxd" userId="118335304926101506" />
+          </div>
 
-        <div className="w-full flex justify-center my-6">
-          <DiscordBanner username="Leoxd" userId="118335304926101506" />
-        </div>
-
-        <BackdropBlur className="w-full max-w-4xl p-6 rounded-lg">
-          <h2 className="text-2xl font-bold mb-6 text-center">Technologies I've Worked With So Far</h2>
-          <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 bg-white/20 dark:bg-black/40 backdrop-blur-md rounded-lg border border-gray-200/20 dark:border-gray-700/20 shadow-lg"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {skillItems
-              .filter((item) => !["MySQL", "SQL", "GitHub", "v0", "Git"].includes(item.name))
-              .map((item) => (
+          <BackdropBlur className="w-full max-w-4xl p-6 rounded-lg">
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+              Technologies I've Worked With So Far
+            </h2>
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 bg-white/20 dark:bg-black/40 backdrop-blur-md rounded-lg border border-gray-200/20 dark:border-gray-700/20 shadow-lg"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {skillItems.map((item) => (
                 <motion.div
                   key={item.name}
                   className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-200/30 dark:hover:bg-gray-700/30 transition-all duration-200 bg-white/30 dark:bg-gray-800/30 shadow-md overflow-hidden"
@@ -116,10 +117,11 @@ export default function ResumeContent() {
                   </div>
                 </motion.div>
               ))}
-          </motion.div>
-        </BackdropBlur>
-      </div>
-    </ResponsiveContainer>
+            </motion.div>
+          </BackdropBlur>
+        </div>
+      </ResponsiveContainer>
+    </div>
   )
 }
 

@@ -11,14 +11,15 @@ import {
   SiReact,
   SiFlask,
   SiGit,
-  SiGithub,
   SiVercel,
   SiDocker,
   SiTailwindcss,
   SiFramer,
   SiMarkdown,
   SiPostgresql,
+  SiGraphql,
 } from "react-icons/si"
+import { TbApi } from "react-icons/tb"
 
 // Define the structure for skill items
 interface SkillItem {
@@ -82,15 +83,6 @@ const PythonIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   </svg>
 )
 
-const VercelV0Icon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M12 2L2 19.7778H22L12 2Z" fill="#000000" />
-    <text x="12" y="18" fontFamily="Arial" fontSize="8" fill="#FFFFFF" textAnchor="middle" dominantBaseline="middle">
-      v0
-    </text>
-  </svg>
-)
-
 export const skillItems: SkillItem[] = [
   { name: "HTML", Icon: SiHtml5, color: "#E34F26" },
   { name: "CSS", Icon: SiCss3, color: "#1572B6" },
@@ -104,13 +96,13 @@ export const skillItems: SkillItem[] = [
   { name: "React", Icon: SiReact, color: "#61DAFB" },
   { name: "Flask", Icon: SiFlask, color: "#3776AB" },
   { name: "Git", Icon: SiGit, color: "#F05032" },
-  { name: "GitHub", Icon: SiGithub, color: "#181717" },
   { name: "MySQL", Icon: SiMysql, color: "#4479A1" },
   { name: "Vercel", Icon: SiVercel, color: "#000000" },
   { name: "Docker", Icon: SiDocker, color: "#2496ED" },
-  { name: "v0", Icon: VercelV0Icon, color: "#000000" },
   { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Framer Motion", Icon: SiFramer, color: "#0055FF" },
   { name: "Markdown", Icon: SiMarkdown, color: "#3B82F6" },
+  { name: "API Integration", Icon: TbApi, color: "#00C7B7" },
+  { name: "GraphQL", Icon: SiGraphql, color: "#E535AB" },
 ]
 

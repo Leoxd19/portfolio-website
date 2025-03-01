@@ -6,7 +6,6 @@ import Image from "next/image"
 import { motion, useAnimation } from "framer-motion"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 
-const DynamicFeaturedProject = dynamic(() => import("@/components/featured-project"), { ssr: false })
 const DynamicConstantsVariablesGame = dynamic(() => import("@/components/constants-variables-game"), { ssr: false })
 
 export default function PlaygroundContent() {
@@ -25,22 +24,53 @@ export default function PlaygroundContent() {
   }, [startAnimation])
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 overflow-y-auto pt-20">
-      <div className="max-w-4xl mx-auto px-4 py-16 space-y-24">
-        <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={0}>
-          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-gray-100 dark:bg-gray-800">
-            <DynamicFeaturedProject
-              title="Secure AI-Powered Password Management"
-              description="Revolutionizing how we store and access sensitive information with advanced AI integration."
-              mediaSource="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nimbus-uEnlPxZn53IBY6WwZgBT7beLFZWpJS.mp4"
-              mediaType="video"
-              mediaClassName="w-full md:w-2/5 rounded-lg overflow-hidden"
-            />
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 overflow-y-auto pt-20 relative">
+      {/* Background Image */}
+      <div className="fixed inset-0 z-0">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pandasleep2.jpg-6DvUUKVl4HxkPqxsRSNgtx1PqhC0fJ.jpeg"
+          alt="Sleeping red panda on a tree branch"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-black/30 dark:bg-black/50" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 space-y-24">
+        {/* Prompt Anatomy Image with Context */}
+        <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={0} className="mb-12">
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/80 dark:bg-gray-800/80">
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                My Approach to AI Prompting for Reasoning Models
+              </h2>
+              <p className="text-base md:text-lg text-black dark:text-white leading-relaxed">
+                This example illustrates how I structure my prompts specifically for AI reasoning models. By following
+                this format, you can create more effective and targeted prompts, leading to better and more accurate
+                responses from models designed for complex reasoning tasks. The key elements include a clear goal,
+                specific return format, important warnings or constraints, and relevant context to guide the model's
+                understanding and output.
+              </p>
+              <div className="aspect-w-16 aspect-h-9 relative">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Prompting.png-8Sau5lyKbF14kCdFvzKmncfNznrWf1.jpeg"
+                  alt="Structured AI prompt example for reasoning models showing goal, return format, warnings, and context sections"
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto rounded-lg"
+                  priority
+                />
+              </div>
+            </div>
           </BackdropBlur>
         </motion.section>
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={1}>
-          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-gray-100 dark:bg-gray-800">
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/80 dark:bg-gray-800/80">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
               <div className="w-full md:w-3/5 flex flex-col items-center md:items-start text-center md:text-left">
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Espresso-Xoc</h2>
@@ -74,7 +104,7 @@ export default function PlaygroundContent() {
         </motion.section>
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={controls} custom={2}>
-          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-gray-100 dark:bg-gray-800">
+          <BackdropBlur className="p-8 rounded-2xl shadow-lg bg-white/80 dark:bg-gray-800/80">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/2">
                 <div className="relative rounded-lg overflow-hidden shadow-lg">

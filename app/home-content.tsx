@@ -27,7 +27,7 @@ export default function HomeContent() {
   }, [])
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-screen h-screen">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
@@ -107,7 +107,7 @@ export default function HomeContent() {
                     width={48}
                     height={48}
                   />
-                  <p className="text-xs font-mono text-white">
+                  <p className="text-sm font-mono text-white font-semibold shadow-sm">
                     This website respects your privacy. No cookies or invasive tracking used.
                   </p>
                 </motion.div>

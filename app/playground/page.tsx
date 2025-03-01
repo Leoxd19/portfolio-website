@@ -1,7 +1,7 @@
 import PlaygroundContent from "./playground-content"
 
 export const metadata = {
-  title: "Playground - Leo Gardberg",
+  title: "Playground",
 }
 
 export default function PlaygroundPage() {

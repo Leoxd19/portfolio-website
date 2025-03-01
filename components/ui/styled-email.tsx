@@ -11,7 +11,7 @@ export function StyledEmail({ email }: StyledEmailProps) {
   return (
     <BackdropBlur className="inline-flex items-center p-2">
       <motion.div
-        className="font-mono text-xl tracking-wide text-orange-700 dark:text-orange-500"
+        className="font-mono text-xl tracking-wide text-green-600"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

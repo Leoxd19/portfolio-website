@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 // Constants
@@ -19,6 +19,7 @@ export default function ConstantsVariablesGame() {
   // State
   const [flipping, setFlipping] = useState(false)
   const [result, setResult] = useState<CoinSide | null>(null)
+  const [displayedResult, setDisplayedResult] = useState<CoinSide | null>(null)
   const [history, setHistory] = useState<FlipHistory[]>([])
   const [flipCount, setFlipCount] = useState(0)
   const buttonClassName = "bg-black dark:bg-white text-white dark:text-black" // Added button class name
@@ -28,14 +29,27 @@ export default function ConstantsVariablesGame() {
     if (flipping) return
 
     setFlipping(true)
+    setDisplayedResult(null) // Clear the displayed result
+    const newResult: CoinSide = Math.random() < 0.5 ? "H" : "T"
+
     setTimeout(() => {
-      const newResult: CoinSide = Math.random() < 0.5 ? "H" : "T"
       setResult(newResult)
       setHistory((prev) => [...prev, { result: newResult, id: flipCount }].slice(-HISTORY_LIMIT))
       setFlipCount((prev) => prev + 1)
       setFlipping(false)
     }, FLIP_DURATION * 1000)
   }
+
+  // Effect to update displayed result after flipping is done
+  useEffect(() => {
+    if (!flipping && result) {
+      // Add a small delay to ensure the coin has visually settled
+      const timer = setTimeout(() => {
+        setDisplayedResult(result)
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [flipping, result])
 
   // Render
   return (
@@ -65,7 +79,7 @@ export default function ConstantsVariablesGame() {
             }}
             transition={{ duration: FLIP_DURATION, ease: "easeInOut" }}
           >
-            {flipping ? "" : result}
+            {displayedResult}
           </motion.div>
         </div>
 
