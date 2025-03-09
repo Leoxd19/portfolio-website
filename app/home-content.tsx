@@ -3,33 +3,26 @@
 import Image from "next/image"
 import { StyledEmail } from "@/components/ui/styled-email"
 import { EMAIL_ADDRESS, BACKGROUND_IMAGE_URL } from "@/lib/constants"
-import { ResponsiveContainer } from "@/components/responsive-container"
-import { BackdropBlur } from "@/components/ui/backdrop-blur"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Poppins } from "next/font/google"
-import { useState, useEffect } from "react"
 
+// Load Poppins font with specific weights
 const poppins = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
 })
 
+/**
+ * Home page content component
+ * Displays a hero section with background image, title, and contact information
+ */
 export default function HomeContent() {
-  const [showPrivacyMessage, setShowPrivacyMessage] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPrivacyMessage(false)
-    }, 8000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <div className="relative w-screen h-screen">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
+        {/* Full-screen background image */}
         <Image
           src={BACKGROUND_IMAGE_URL || "/placeholder.svg"}
           alt="Background image"
@@ -42,80 +35,53 @@ export default function HomeContent() {
             objectPosition: "center",
           }}
         />
+        {/* Overlay with different opacity for light/dark modes */}
         <div className="absolute inset-0 bg-black/20 dark:bg-black/40 transition-colors duration-300" />
       </div>
 
-      {/* Main content */}
-      <ResponsiveContainer>
+      {/* Main content container with responsive scaling */}
+      <div className="w-full h-full flex items-center justify-center">
         {/* Animated hero section */}
         <motion.div
-          className="relative z-10 text-center max-w-lg"
+          className="relative z-10 text-center max-w-lg px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
+          {/* Main heading with text shadow for better visibility */}
           <h1
             className={`text-5xl font-bold mb-4 text-white ${poppins.className} text-shadow-sm`}
             style={{
               textShadow: `-1px -1px 0 #000, 
-                 1px -1px 0 #000, 
-                -1px 1px 0 #000, 
-                 1px 1px 0 #000,
-                 2px 2px 4px rgba(0,0,0,0.5)`,
+                1px -1px 0 #000, 
+               -1px 1px 0 #000, 
+                1px 1px 0 #000,
+                2px 2px 4px rgba(0,0,0,0.5)`,
             }}
           >
             Hi there, I'm Leo.
           </h1>
+
+          {/* Subheading with text shadow */}
           <p
             className={`text-3xl mb-6 text-white ${poppins.className} text-shadow-sm`}
             style={{
               textShadow: `-1px -1px 0 #000, 
-                 1px -1px 0 #000, 
-                -1px 1px 0 #000, 
-                 1px 1px 0 #000,
-                 1px 1px 3px rgba(0,0,0,0.3)`,
+                1px -1px 0 #000, 
+               -1px 1px 0 #000, 
+                1px 1px 0 #000,
+                1px 1px 3px rgba(0,0,0,0.3)`,
             }}
           >
             Let's build together!
           </p>
+
+          {/* Contact email with animated styling */}
           <a href={`mailto:${EMAIL_ADDRESS}`} className="inline-block">
             <StyledEmail email={EMAIL_ADDRESS} />
           </a>
         </motion.div>
-
-        {/* Animated privacy message */}
-        <AnimatePresence>
-          {showPrivacyMessage && (
-            <motion.div
-              className="absolute bottom-20 left-0 right-0 flex justify-center"
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-            >
-              <BackdropBlur>
-                <motion.div
-                  className="flex items-center gap-2 px-4 py-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/result-62KNlVjq44bkIJSKGGqSWrCkjhZt0j.png"
-                    alt="Sleeping red panda"
-                    width={48}
-                    height={48}
-                  />
-                  <p className="text-sm font-mono text-white font-semibold shadow-sm">
-                    This website respects your privacy. No cookies or invasive tracking used.
-                  </p>
-                </motion.div>
-              </BackdropBlur>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </ResponsiveContainer>
+      </div>
     </div>
   )
 }

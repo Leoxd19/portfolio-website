@@ -1,91 +1,63 @@
 "use client"
 
-import { useState, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 import { Code, Globe, Server, RefreshCw, BarChart, Palette } from "lucide-react"
 import { AnimatedSearchBox } from "@/components/animated-search-box"
 
-const MotionCard = motion.div
-
+/**
+ * Services page content component
+ * Displays a list of services offered with icons and descriptions
+ */
 export default function ServicesContent() {
-  const [expandedCard, setExpandedCard] = useState<number | null>(null)
-
-  const toggleService = useCallback((index: number) => {
-    setExpandedCard((prevIndex) => (prevIndex === index ? null : index))
-  }, [])
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-4xl mx-auto px-4 py-24">
+      <div className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
+        {/* Header section with title and description */}
         <div className="flex flex-col items-center mb-12 text-center">
+          {/* Decorative emoji icons */}
           <div className="flex flex-col items-center justify-center mb-4">
             <span className="text-4xl mb-2">💡</span>
             <span className="text-4xl">🐼</span>
           </div>
+
+          {/* Main heading */}
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
             Streamline Your Online Presence
           </h1>
+
+          {/* Description text */}
           <p className="text-lg text-gray-900 dark:text-white max-w-2xl mb-8">
-            Elevate your digital presence with tailored web solutions. While website creation is more accessible than
+            Elevate your digital presence with my tailored web solutions. While website creation is more accessible than
             ever, partnering with someone experienced in modern web technologies can streamline the process, saving you
             time and ensuring a polished, high-performance result.
           </p>
+
+          {/* Animated search box component */}
           <AnimatedSearchBox />
         </div>
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <MotionCard
-              key={service.title}
-              layout
-              transition={{
-                layout: { duration: 0.3, ease: "easeOut" },
-              }}
-              className={`cursor-pointer p-6 rounded-2xl bg-gray-100 dark:bg-gray-800 ${
-                expandedCard === index ? "shadow-lg" : "shadow-md hover:shadow-lg"
-              }`}
-              onClick={() => toggleService(index)}
-            >
-              <motion.div layout className="flex items-center mb-4">
-                <service.icon className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 flex-shrink-0" />
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{service.title}</h2>
-              </motion.div>
-              <AnimatePresence mode="wait">
-                {expandedCard === index ? (
-                  <motion.div
-                    key="expanded"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <p className="text-base text-gray-900 dark:text-white mb-4 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {service.bullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex} className="flex items-start text-sm text-gray-900 dark:text-white">
-                          <span className="mr-2 text-blue-600 dark:text-blue-400">{bullet.slice(0, 2)}</span>
-                          <span>{bullet.slice(2)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ) : (
-                  <motion.p
-                    key="collapsed"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-base text-gray-900 dark:text-white"
-                  >
-                    {service.description}
-                  </motion.p>
-                )}
-              </AnimatePresence>
-            </MotionCard>
+
+        {/* Services grid - responsive layout for different screen sizes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => (
+            <div key={service.title} className="h-full p-6 rounded-2xl bg-gray-100 dark:bg-gray-800 shadow-md">
+              <div className="flex flex-col h-full">
+                {/* Service header with icon and title */}
+                <div className="flex items-center mb-4">
+                  <service.icon
+                    className="w-6 h-6 mr-3 flex-shrink-0"
+                    style={{ color: service.iconColor }}
+                    aria-hidden="true"
+                  />
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{service.title}</h2>
+                </div>
+
+                {/* Service description */}
+                <p className="text-base text-gray-900 dark:text-white">{service.description}</p>
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
+
+        {/* Contact button */}
         <div className="text-center mt-12">
           <a
             href="mailto:leo.gardberg@gmail.com"
@@ -99,42 +71,46 @@ export default function ServicesContent() {
   )
 }
 
+/**
+ * Services data array
+ * Each service has an icon, title, description, and color
+ */
 const services = [
   {
     icon: Code,
     title: "Advanced Development",
-    description: "Modern, responsive websites with the latest technologies",
-    bullets: ["💻 Adaptive design", "🎨 User-centric UIs"],
+    description: "Modern, responsive websites with advanced technologies.",
+    iconColor: "#3B82F6", // Blue
   },
   {
     icon: Globe,
     title: "Smooth Deployment",
-    description: "Streamlined launch from concept to live site",
-    bullets: ["🌐 Domain setup", "🚀 Efficient deployment"],
+    description: "Seamless transition from concept to live website.",
+    iconColor: "#10B981", // Green
   },
   {
     icon: Server,
     title: "Reliable Hosting",
-    description: "Scalable and secure infrastructure solutions",
-    bullets: ["☁️ Optimized architecture", "⛨ Robust security"],
+    description: "Secure and scalable infrastructure solutions.",
+    iconColor: "#6366F1", // Indigo
   },
   {
     icon: RefreshCw,
     title: "Ongoing Maintenance",
-    description: "Keep your site current and high-performing",
-    bullets: ["🔄 Regular updates", "⚡ Continuous optimization"],
+    description: "Regular updates to ensure optimal performance.",
+    iconColor: "#F59E0B", // Amber
   },
   {
     icon: BarChart,
     title: "Analytical Insights",
-    description: "Data-driven enhancements for your online presence",
-    bullets: ["📊 User behavior analysis", "🎯 Conversion optimization"],
+    description: "Data-driven strategies to enhance your presence.",
+    iconColor: "#EC4899", // Pink
   },
   {
     icon: Palette,
     title: "Creative Design",
-    description: "Unique visual identities that captivate users",
-    bullets: ["🎨 Brand development", "✨ Custom graphics"],
+    description: "Unique visuals that captivate your audience.",
+    iconColor: "#8B5CF6", // Purple
   },
 ]
 

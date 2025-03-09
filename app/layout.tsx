@@ -10,20 +10,27 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
-        sizes: "32x32",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-192x192-LvDMA5oGLTogDLMCnzaDmtdDsRaye7.png",
+        sizes: "192x192",
+        type: "image/png",
       },
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
-        sizes: "192x192",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-192x192-LvDMA5oGLTogDLMCnzaDmtdDsRaye7.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-192x192-LvDMA5oGLTogDLMCnzaDmtdDsRaye7.png",
+        sizes: "16x16",
+        type: "image/png",
       },
     ],
     apple: {
-      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-192x192-LvDMA5oGLTogDLMCnzaDmtdDsRaye7.png",
       sizes: "180x180",
     },
     shortcut: {
-      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png",
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-192x192-LvDMA5oGLTogDLMCnzaDmtdDsRaye7.png",
     },
   },
     generator: 'v0.dev'

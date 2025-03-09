@@ -1,24 +1,22 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Mail, Github } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+/**
+ * Footer component that appears at the bottom of every page
+ * Displays copyright information, contact links, and theme toggle
+ */
 export function Footer() {
   return (
-    <footer className="w-full py-3 bg-black text-white text-sm">
+    <footer className="w-full py-4 bg-black text-white text-sm">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-center space-y-2 sm:space-y-0">
-          <div className="flex items-center space-x-3 w-full sm:w-auto">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ggcorner-bJRqJvYvhVYc0es9EoVqLAqMA6bLGl.png"
-              alt="Red Panda Logo"
-              width={32}
-              height={32}
-              className="w-8 h-8"
-            />
-            <p className="font-mono">
+        {/* Mobile layout stacks elements vertically with proper spacing */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+          {/* Copyright section */}
+          <div className="flex items-center justify-center w-full sm:w-auto">
+            <p className="font-mono text-center sm:text-left">
               Built by{" "}
               <Link
                 href="https://github.com/Leoxd19"
@@ -31,14 +29,19 @@ export function Footer() {
               © {new Date().getFullYear()}
             </p>
           </div>
-          <div className="flex items-center space-x-4 w-full sm:w-auto justify-center sm:justify-end">
-            <div className="flex items-center space-x-1">
+
+          {/* Contact links and theme toggle */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto justify-center sm:justify-end">
+            {/* Contact email */}
+            <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-gray-400" />
               <a href="mailto:leo.gardberg@gmail.com" className="font-mono hover:text-blue-400 transition-colors">
                 leo.gardberg@gmail.com
               </a>
             </div>
-            <div className="flex items-center space-x-1">
+
+            {/* GitHub link */}
+            <div className="flex items-center gap-2">
               <Github className="w-4 h-4 text-gray-400" />
               <Link
                 href="https://github.com/Leoxd19"
@@ -49,6 +52,8 @@ export function Footer() {
                 GitHub
               </Link>
             </div>
+
+            {/* Theme toggle switch */}
             <ThemeToggle />
           </div>
         </div>
