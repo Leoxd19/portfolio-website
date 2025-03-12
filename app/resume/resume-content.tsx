@@ -108,31 +108,27 @@ export default function ResumeContent() {
           <div className="w-full flex flex-col items-center gap-4 my-6">
             {/* Contact buttons container - centered with max width */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-xs">
-              {/* Discord button - now with official Discord logo */}
+              {/* Discord button - now brighter and more visible */}
               <motion.div
-                className="flex items-center space-x-2 bg-white/90 dark:bg-gray-800/90 p-2 rounded-2xl shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
-                whileHover={{ scale: 1.05 }}
+                className="flex items-center space-x-2 bg-[#5865F2]/20 dark:bg-[#5865F2]/30 p-3 rounded-2xl shadow-md hover:bg-[#5865F2]/30 dark:hover:bg-[#5865F2]/40 transition-colors w-full sm:w-auto justify-center border border-[#5865F2]/30 dark:border-[#5865F2]/50"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 10px rgba(88, 101, 242, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FaDiscord className="w-4 h-4 text-[#5865F2]" aria-hidden="true" />
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  <span className="font-bold text-[#5865F2]">Leoxd</span>
-                </span>
+                <FaDiscord className="w-5 h-5 text-[#5865F2]" aria-hidden="true" />
+                <span className="text-sm font-bold text-[#5865F2]">Leoxd</span>
               </motion.div>
 
-              {/* LinkedIn link - smaller size */}
+              {/* LinkedIn link - brighter and more visible */}
               <motion.a
                 href="https://www.linkedin.com/in/leo-gardberg-027a2b165/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 bg-white/90 dark:bg-gray-800/90 p-2 rounded-2xl shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
-                whileHover={{ scale: 1.05 }}
+                className="flex items-center space-x-2 bg-[#0A66C2]/20 dark:bg-[#0A66C2]/30 p-3 rounded-2xl shadow-md hover:bg-[#0A66C2]/30 dark:hover:bg-[#0A66C2]/40 transition-colors w-full sm:w-auto justify-center border border-[#0A66C2]/30 dark:border-[#0A66C2]/50"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 10px rgba(10, 102, 194, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Linkedin className="w-4 h-4 text-[#0A66C2]" aria-hidden="true" />
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  <span className="font-bold text-[#0A66C2]">Leo Gardberg</span>
-                </span>
+                <Linkedin className="w-5 h-5 text-[#0A66C2]" aria-hidden="true" />
+                <span className="text-sm font-bold text-[#0A66C2]">Leo Gardberg</span>
               </motion.a>
             </div>
           </div>
