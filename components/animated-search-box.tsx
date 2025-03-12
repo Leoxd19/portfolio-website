@@ -108,7 +108,7 @@ export function AnimatedSearchBox() {
     <div className="w-full max-w-2xl mx-auto mb-12 pointer-events-none">
       <div className="relative">
         <motion.div
-          className="text-xl md:text-3xl text-gray-900 dark:text-white font-mono h-16 flex items-center justify-center overflow-hidden font-semibold bg-white/50 dark:bg-gray-800/50 backdrop-blur-md rounded-lg shadow-lg px-6 py-4 border border-gray-200 dark:border-gray-700"
+          className="text-xl md:text-3xl text-gray-900 dark:text-white font-mono h-16 flex items-center justify-center overflow-hidden font-semibold bg-white/50 dark:bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-lg px-6 py-4 border border-gray-200 dark:border-gray-700"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

@@ -30,7 +30,7 @@ export function FloatingNavButton() {
 
   return (
     <motion.button
-      className="fixed right-5 top-1/2 transform -translate-y-1/2 z-[100] p-2 focus:outline-none bg-white/90 dark:bg-black/90 rounded-lg shadow-lg border border-gray-200/50 dark:border-gray-800/50"
+      className="fixed right-5 top-1/2 transform -translate-y-1/2 z-[100] p-2 focus:outline-none bg-white/90 dark:bg-black/90 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-800/50"
       onClick={handleClick}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}

@@ -13,7 +13,7 @@ interface StyledEmailProps {
  */
 export function StyledEmail({ email }: StyledEmailProps) {
   return (
-    <BackdropBlur className="inline-flex items-center p-3 bg-black/80 dark:bg-black/80">
+    <BackdropBlur className="inline-flex items-center p-3 bg-black/80 dark:bg-black/80 rounded-2xl">
       <motion.div
         className="font-mono text-lg sm:text-xl tracking-wide text-white"
         initial={{ opacity: 0, y: 10 }}

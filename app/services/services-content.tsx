@@ -61,7 +61,7 @@ export default function ServicesContent() {
         <div className="text-center mt-16">
           <a
             href="mailto:leo.gardberg@gmail.com"
-            className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-base font-mono hover:scale-105"
+            className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-2xl hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-base font-mono hover:scale-105"
           >
             Get in Touch
           </a>

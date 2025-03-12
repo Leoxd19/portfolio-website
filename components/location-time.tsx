@@ -26,7 +26,7 @@ export function LocationTime() {
 
   return (
     <div className="fixed top-5 left-5 z-50 hidden sm:block">
-      <BackdropBlur className="bg-white/90 dark:bg-black/90 border border-gray-200/50 dark:border-gray-800/50 rounded-lg">
+      <BackdropBlur className="bg-white/90 dark:bg-black/90 border border-gray-200/50 dark:border-gray-800/50">
         <span className="text-sm font-mono font-bold text-black dark:text-white p-2 inline-block">
           Stockholm {time}
         </span>

@@ -10,12 +10,12 @@ interface BackdropBlurProps {
 
 /**
  * BackdropBlur component for creating a blurred backdrop effect
- * Used across the site for consistent styling
+ * Used across the site for consistent styling with smooth rounded corners
  */
 export function BackdropBlur({ children, className = "" }: BackdropBlurProps) {
   return (
     <motion.div
-      className={`backdrop-blur-md rounded-lg ${className}`}
+      className={`backdrop-blur-md rounded-2xl ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

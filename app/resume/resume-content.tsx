@@ -82,7 +82,7 @@ export default function ResumeContent() {
           <motion.a
             href="/Leo_Gardberg_Resume.pdf"
             download="Leo_Gardberg_Resume.pdf"
-            className="relative px-8 py-4 bg-transparent text-gray-900 dark:text-white rounded-lg overflow-hidden border border-current/20 transition-colors duration-300 ease-in-out"
+            className="relative px-8 py-4 bg-transparent text-gray-900 dark:text-white rounded-2xl overflow-hidden border border-current/20 transition-colors duration-300 ease-in-out"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             whileHover={{ scale: 1.05 }}
@@ -110,7 +110,7 @@ export default function ResumeContent() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-xs">
               {/* Discord button - now with official Discord logo */}
               <motion.div
-                className="flex items-center space-x-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
+                className="flex items-center space-x-2 bg-white/90 dark:bg-gray-800/90 p-2 rounded-2xl shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -125,7 +125,7 @@ export default function ResumeContent() {
                 href="https://www.linkedin.com/in/leo-gardberg-027a2b165/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
+                className="flex items-center space-x-2 bg-white/90 dark:bg-gray-800/90 p-2 rounded-2xl shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -138,13 +138,13 @@ export default function ResumeContent() {
           </div>
 
           {/* Skills section */}
-          <BackdropBlur className="w-full max-w-4xl p-6 rounded-lg">
+          <BackdropBlur className="w-full max-w-4xl p-6 rounded-2xl">
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">
               Technologies I've Worked With So Far
             </h2>
             {/* Skills grid with responsive layout */}
             <motion.div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 bg-white/20 dark:bg-black/40 backdrop-blur-md rounded-lg border border-gray-200/20 dark:border-gray-700/20 shadow-lg"
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 bg-white/20 dark:bg-black/40 backdrop-blur-md rounded-2xl border border-gray-200/20 dark:border-gray-700/20 shadow-lg"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -152,7 +152,7 @@ export default function ResumeContent() {
               {skillItems.map((item) => (
                 <motion.div
                   key={item.name}
-                  className="flex items-center justify-center p-3 rounded-lg hover:bg-gray-200/30 dark:hover:bg-gray-700/30 transition-all duration-200 bg-white/30 dark:bg-gray-800/30 shadow-md overflow-hidden"
+                  className="flex items-center justify-center p-3 rounded-xl hover:bg-gray-200/30 dark:hover:bg-gray-700/30 transition-all duration-200 bg-white/30 dark:bg-gray-800/30 shadow-md overflow-hidden"
                   variants={itemVariants}
                 >
                   <div className="flex items-center space-x-2 transition-all duration-200 hover:scale-110">
