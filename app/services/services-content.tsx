@@ -10,7 +10,7 @@ import { AnimatedSearchBox } from "@/components/animated-search-box"
 export default function ServicesContent() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
+      <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
         {/* Header section with title and description */}
         <div className="flex flex-col items-center mb-12 text-center">
           {/* Decorative emoji icons */}
@@ -20,12 +20,12 @@ export default function ServicesContent() {
           </div>
 
           {/* Main heading */}
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
             Streamline Your Online Presence
           </h1>
 
           {/* Description text */}
-          <p className="text-lg text-gray-900 dark:text-white max-w-2xl mb-8">
+          <p className="text-lg text-gray-900 dark:text-white max-w-2xl mb-8 leading-relaxed">
             Elevate your digital presence with my tailored web solutions. While website creation is more accessible than
             ever, partnering with someone experienced in modern web technologies can streamline the process, saving you
             time and ensuring a polished, high-performance result.
@@ -43,7 +43,7 @@ export default function ServicesContent() {
                 {/* Service header with icon and title */}
                 <div className="flex items-center mb-4">
                   <service.icon
-                    className="w-6 h-6 mr-3 flex-shrink-0"
+                    className="w-7 h-7 mr-3 flex-shrink-0"
                     style={{ color: service.iconColor }}
                     aria-hidden="true"
                   />
@@ -51,17 +51,17 @@ export default function ServicesContent() {
                 </div>
 
                 {/* Service description */}
-                <p className="text-base text-gray-900 dark:text-white">{service.description}</p>
+                <p className="text-base text-gray-900 dark:text-white leading-relaxed">{service.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Contact button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <a
             href="mailto:leo.gardberg@gmail.com"
-            className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-sm font-mono hover:scale-105"
+            className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-opacity-80 dark:hover:bg-opacity-80 transition-all duration-300 text-base font-mono hover:scale-105"
           >
             Get in Touch
           </a>

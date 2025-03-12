@@ -4,6 +4,8 @@ import { useState, useCallback, useMemo } from "react"
 import { motion, useAnimation } from "framer-motion"
 import { BackdropBlur } from "@/components/ui/backdrop-blur"
 import { skillItems } from "@/lib/skill-items"
+import { Linkedin } from "lucide-react"
+import { FaDiscord } from "react-icons/fa"
 
 /**
  * Resume page content component
@@ -57,7 +59,7 @@ export default function ResumeContent() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="flex flex-col items-center space-y-8">
           {/* Download instructions */}
           <div className="flex flex-col items-center mb-4 text-center">
@@ -86,7 +88,7 @@ export default function ResumeContent() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10 font-mono text-sm tracking-normal">Download Resume</span>
+            <span className="relative z-10 font-mono text-base tracking-normal">Download Resume</span>
             {/* Background fill animation */}
             <motion.div
               className="absolute inset-0 bg-current/10"
@@ -103,11 +105,35 @@ export default function ResumeContent() {
           </motion.a>
 
           {/* Contact information */}
-          <div className="w-full flex justify-center my-6">
-            <div className="flex items-center space-x-3 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm">
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Discord: <span className="font-bold text-[#5865F2]">Leoxd</span>
-              </span>
+          <div className="w-full flex flex-col items-center gap-4 my-6">
+            {/* Contact buttons container - centered with max width */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-xs">
+              {/* Discord button - now with official Discord logo */}
+              <motion.div
+                className="flex items-center space-x-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaDiscord className="w-4 h-4 text-[#5865F2]" aria-hidden="true" />
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-[#5865F2]">Leoxd</span>
+                </span>
+              </motion.div>
+
+              {/* LinkedIn link - smaller size */}
+              <motion.a
+                href="https://www.linkedin.com/in/leo-gardberg-027a2b165/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto justify-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Linkedin className="w-4 h-4 text-[#0A66C2]" aria-hidden="true" />
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-[#0A66C2]">Leo Gardberg</span>
+                </span>
+              </motion.a>
             </div>
           </div>
 
@@ -126,7 +152,7 @@ export default function ResumeContent() {
               {skillItems.map((item) => (
                 <motion.div
                   key={item.name}
-                  className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-200/30 dark:hover:bg-gray-700/30 transition-all duration-200 bg-white/30 dark:bg-gray-800/30 shadow-md overflow-hidden"
+                  className="flex items-center justify-center p-3 rounded-lg hover:bg-gray-200/30 dark:hover:bg-gray-700/30 transition-all duration-200 bg-white/30 dark:bg-gray-800/30 shadow-md overflow-hidden"
                   variants={itemVariants}
                 >
                   <div className="flex items-center space-x-2 transition-all duration-200 hover:scale-110">

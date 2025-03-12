@@ -3,7 +3,8 @@ export const NAVIGATION_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/resume", label: "Resume" },
-  { href: "/playground", label: "Playground" },
+  // Playground page temporarily hidden
+  // { href: "/playground", label: "Playground" },
 ] as const
 
 // Email address for contact button

@@ -36,21 +36,21 @@ export default function HomeContent() {
           }}
         />
         {/* Overlay with different opacity for light/dark modes */}
-        <div className="absolute inset-0 bg-black/20 dark:bg-black/40 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-black/30 dark:bg-black/50 transition-colors duration-300" />
       </div>
 
       {/* Main content container with responsive scaling */}
       <div className="w-full h-full flex items-center justify-center">
         {/* Animated hero section */}
         <motion.div
-          className="relative z-10 text-center max-w-lg px-4"
+          className="relative z-10 text-center max-w-lg px-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           {/* Main heading with text shadow for better visibility */}
           <h1
-            className={`text-5xl font-bold mb-4 text-white ${poppins.className} text-shadow-sm`}
+            className={`text-4xl sm:text-5xl font-bold mb-4 text-white ${poppins.className} text-shadow-sm`}
             style={{
               textShadow: `-1px -1px 0 #000, 
                 1px -1px 0 #000, 
@@ -64,7 +64,7 @@ export default function HomeContent() {
 
           {/* Subheading with text shadow */}
           <p
-            className={`text-3xl mb-6 text-white ${poppins.className} text-shadow-sm`}
+            className={`text-2xl sm:text-3xl mb-6 text-white ${poppins.className} text-shadow-sm`}
             style={{
               textShadow: `-1px -1px 0 #000, 
                 1px -1px 0 #000, 

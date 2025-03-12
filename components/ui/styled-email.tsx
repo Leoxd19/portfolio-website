@@ -7,11 +7,15 @@ interface StyledEmailProps {
   email: string
 }
 
+/**
+ * Styled email component
+ * Displays an email address with animated characters and a backdrop blur
+ */
 export function StyledEmail({ email }: StyledEmailProps) {
   return (
-    <BackdropBlur className="inline-flex items-center p-2 bg-black/80 dark:bg-black/80">
+    <BackdropBlur className="inline-flex items-center p-3 bg-black/80 dark:bg-black/80">
       <motion.div
-        className="font-mono text-xl tracking-wide text-white"
+        className="font-mono text-lg sm:text-xl tracking-wide text-white"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
