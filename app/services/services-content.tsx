@@ -24,12 +24,16 @@ export default function ServicesContent() {
             Streamline Your Online Presence
           </h1>
 
-          {/* Description text */}
-          <p className="text-lg text-gray-900 dark:text-white max-w-2xl mb-8 leading-relaxed">
-            Elevate your digital presence with my tailored web solutions. While website creation is more accessible than
-            ever, partnering with someone experienced in modern web technologies can streamline the process, saving you
-            time and ensuring a polished, high-performance result.
-          </p>
+          {/* Description text with backdrop for improved readability */}
+          <div className="max-w-2xl mb-8">
+            <div className="backdrop-blur-md rounded-2xl bg-gray-100/90 dark:bg-gray-800/90 border border-gray-200/50 dark:border-gray-700/50">
+              <p className="text-lg text-gray-900 dark:text-white p-4 leading-relaxed">
+                Elevate your digital presence with my tailored web solutions. While website creation is more accessible
+                than ever, partnering with someone experienced in modern web technologies can streamline the process,
+                saving you time and ensuring a polished, high-performance result.
+              </p>
+            </div>
+          </div>
 
           {/* Animated search box component */}
           <AnimatedSearchBox />
