@@ -1,4 +1,4 @@
-# My Personal Website
+# LEOXYZ
 
 This is my personal website repository! This project showcases my take on a modern, responsive personal website.
 
