@@ -3,6 +3,7 @@
 This is my personal website—a modern, responsive portfolio and landing page.
 
 🔧 
+
     Next.js & React
 
     TypeScript
@@ -16,6 +17,7 @@ This is my personal website—a modern, responsive portfolio and landing page.
     Deployed via Vercel
 
 ✨ 
+
     Responsive design
 
     Light/Dark mode toggle
@@ -23,8 +25,6 @@ This is my personal website—a modern, responsive portfolio and landing page.
     Animated transitions & dynamic components
 
     SEO friendly & performance optimized
-
-
 
 Open to suggestions and improvements—feel free to open an issue or submit a pull request.
 
