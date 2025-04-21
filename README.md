@@ -1,8 +1,8 @@
 # LEOXYZ
 
 This is my personal website—a modern, responsive portfolio and landing page.
-🔧 
 
+🔧 
     Next.js & React
 
     TypeScript
@@ -16,7 +16,6 @@ This is my personal website—a modern, responsive portfolio and landing page.
     Deployed via Vercel
 
 ✨ 
-
     Responsive design
 
     Light/Dark mode toggle
