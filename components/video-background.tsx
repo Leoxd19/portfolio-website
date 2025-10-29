@@ -1,16 +1,28 @@
 "use client"
 
+import { useEffect, useState } from "react"
+
 interface VideoBackgroundProps {
   videoUrl: string
 }
 
 /**
  * Video background component that displays a single looping video.
- * Only displays on desktop.
+ * Only displays on desktop and after client-side mount to prevent hydration issues.
  */
 export function VideoBackground({ videoUrl }: VideoBackgroundProps) {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return null
+  }
+
   return (
-    <div className="absolute inset-0 hidden sm:block">
+    <div className="absolute inset-0 hidden sm:block z-10">
       <video
         src={videoUrl}
         autoPlay
