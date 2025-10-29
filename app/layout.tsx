@@ -33,13 +33,12 @@ export const metadata: Metadata = {
       url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/android-chrome-192x192-LvDMA5oGLTogDLMCnzaDmtdDsRaye7.png",
     },
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return <ClientRootLayout>{children}</ClientRootLayout>
 }
-
 
 
 import './globals.css'

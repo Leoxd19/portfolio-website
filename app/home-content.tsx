@@ -2,10 +2,11 @@
 
 import Image from "next/image"
 import { StyledEmail } from "@/components/ui/styled-email"
-import { EMAIL_ADDRESS, BACKGROUND_IMAGE_URL } from "@/lib/constants"
+import { EMAIL_ADDRESS, BACKGROUND_IMAGE_URL, BACKGROUND_VIDEO_URL } from "@/lib/constants"
 import { motion } from "framer-motion"
 import { Poppins } from "next/font/google"
 import { TerminalMessage } from "@/components/terminal-message"
+import { VideoBackground } from "@/components/video-background"
 
 // Load Poppins font with specific weights
 const poppins = Poppins({
@@ -20,10 +21,12 @@ const poppins = Poppins({
  */
 export default function HomeContent() {
   return (
-    <div className="relative w-screen h-screen">
-      {/* Background image with overlay */}
+    <div className="relative w-screen h-screen overflow-hidden fixed inset-0 max-h-screen">
+      {/* Background with video on desktop, image on mobile */}
       <div className="absolute inset-0">
-        {/* Full-screen background image */}
+        <VideoBackground videoUrl={BACKGROUND_VIDEO_URL} />
+
+        {/* Static background image - visible on mobile, fallback on desktop */}
         <Image
           src={BACKGROUND_IMAGE_URL || "/placeholder.svg"}
           alt="Background image"
@@ -31,13 +34,11 @@ export default function HomeContent() {
           priority
           sizes="100vw"
           quality={100}
-          className="object-cover transition-opacity duration-500 ease-in-out"
+          className="object-cover transition-opacity duration-500 ease-in-out sm:hidden"
           style={{
             objectPosition: "center",
           }}
         />
-        {/* Overlay with different opacity for light/dark modes */}
-        <div className="absolute inset-0 bg-black/30 dark:bg-black/50 transition-colors duration-300" />
       </div>
 
       {/* Main content container with responsive scaling */}
@@ -91,4 +92,3 @@ export default function HomeContent() {
     </div>
   )
 }
-
