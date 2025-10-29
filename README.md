@@ -41,3 +41,4 @@ Please ensure that your contributions align with the overall design and purpose 
 This project is open source and available under the MIT License.
 
 Built and maintained by Leo Gardberg
+

@@ -1,7 +1,5 @@
-import type { Metadata } from "next"
-import type { ReactNode } from "react"
+import type { Metadata, ReactNode } from "react"
 import ClientRootLayout from "./client"
-import "./globals.css"
 
 export const metadata: Metadata = {
   title: {
@@ -41,3 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return <ClientRootLayout>{children}</ClientRootLayout>
 }
+
+
+
+import './globals.css'

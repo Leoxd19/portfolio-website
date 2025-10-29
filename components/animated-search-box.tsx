@@ -124,3 +124,4 @@ export function AnimatedSearchBox() {
     </div>
   )
 }
+
