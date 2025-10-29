@@ -11,4 +11,3 @@ export default function PlaygroundPage() {
   // This code is unreachable but kept for TypeScript
   return null
 }
-

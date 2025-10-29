@@ -28,9 +28,7 @@ export default function ServicesContent() {
           <div className="max-w-2xl mb-8">
             <div className="backdrop-blur-md rounded-2xl bg-gray-100/90 dark:bg-gray-800/90 border border-gray-200/50 dark:border-gray-700/50">
               <p className="text-lg text-gray-900 dark:text-white p-4 leading-relaxed">
-                Elevate your digital presence with my tailored web solutions. While website creation is more accessible
-                than ever, partnering with someone experienced in modern web technologies can streamline the process,
-                saving you time and ensuring a polished, high-performance result.
+                Building smooth, minimal, and meaningful web projects.
               </p>
             </div>
           </div>
@@ -117,4 +115,3 @@ const services = [
     iconColor: "#8B5CF6", // Purple
   },
 ]
-

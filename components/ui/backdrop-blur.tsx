@@ -24,4 +24,3 @@ export function BackdropBlur({ children, className = "" }: BackdropBlurProps) {
     </motion.div>
   )
 }
-
