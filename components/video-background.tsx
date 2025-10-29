@@ -18,7 +18,7 @@ export function VideoBackground({ videoUrl }: VideoBackgroundProps) {
   }, [])
 
   if (!isMounted) {
-    return null
+    return <div className="absolute inset-0 hidden sm:block z-10" />
   }
 
   return (

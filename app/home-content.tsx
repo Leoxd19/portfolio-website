@@ -23,11 +23,8 @@ export default function HomeContent() {
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden">
       {/* Background with video on desktop, image on mobile */}
-      <div className="absolute inset-0 z-0">
-        {/* Video background - desktop only */}
-        <VideoBackground videoUrl={BACKGROUND_VIDEO_URL} />
-
-        {/* Static background image - mobile only */}
+      <div className="absolute inset-0">
+        {/* Static background image - mobile only, lower z-index */}
         <Image
           src={BACKGROUND_IMAGE_URL || "/placeholder.svg"}
           alt="Background image"
@@ -35,15 +32,18 @@ export default function HomeContent() {
           priority
           sizes="100vw"
           quality={100}
-          className="object-cover sm:hidden z-0"
+          className="object-cover z-0 sm:hidden"
           style={{
             objectPosition: "center",
           }}
         />
+
+        {/* Video background - desktop only, higher z-index */}
+        <VideoBackground videoUrl={BACKGROUND_VIDEO_URL} />
       </div>
 
       {/* Main content container with responsive scaling */}
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+      <div className="relative z-20 w-full h-full flex flex-col items-center justify-center">
         {/* Animated hero section */}
         <motion.div
           className="relative z-10 text-center max-w-lg px-6 mb-8"
