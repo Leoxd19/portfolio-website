@@ -45,3 +45,4 @@ export function FloatingNavButton() {
     </motion.button>
   )
 }
+

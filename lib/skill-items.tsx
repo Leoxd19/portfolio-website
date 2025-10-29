@@ -105,3 +105,4 @@ export const skillItems: SkillItem[] = [
   { name: "API Integration", Icon: TbApi, color: "#00C7B7" },
   { name: "GraphQL", Icon: SiGraphql, color: "#E535AB" },
 ]
+

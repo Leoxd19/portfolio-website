@@ -13,3 +13,4 @@ export const EMAIL_ADDRESS = "Leo.gardberg@gmail.com"
 // URL for the background image on the home page
 export const BACKGROUND_IMAGE_URL =
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pandachillz2.jpg-LHfYPYLXeGCpApKxN9QvKnDzaCnXls.jpeg"
+
