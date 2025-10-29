@@ -17,11 +17,11 @@ const poppins = Poppins({
 
 /**
  * Home page content component
- * Displays a hero section with background image, title, and contact information
+ * Displays a hero section with background video/image, title, and contact information
  */
 export default function HomeContent() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden fixed inset-0 max-h-screen">
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Background with video on desktop, image on mobile */}
       <div className="absolute inset-0">
         <VideoBackground videoUrl={BACKGROUND_VIDEO_URL} />
@@ -34,25 +34,28 @@ export default function HomeContent() {
           priority
           sizes="100vw"
           quality={100}
-          className="object-cover transition-opacity duration-500 ease-in-out sm:hidden"
+          className="object-cover sm:hidden"
           style={{
             objectPosition: "center",
           }}
         />
+
+        {/* Overlay for mobile to match desktop darkness */}
+        <div className="absolute inset-0 bg-black/30 dark:bg-black/50 sm:hidden" />
       </div>
 
-      {/* Main content container with responsive scaling */}
-      <div className="w-full h-full flex flex-col items-center justify-center">
+      {/* Main content container */}
+      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
         {/* Animated hero section */}
         <motion.div
-          className="relative z-10 text-center max-w-lg px-6 mb-8"
+          className="text-center max-w-lg px-6 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           {/* Main heading with text shadow for better visibility */}
           <h1
-            className={`text-4xl sm:text-5xl font-bold mb-4 text-white ${poppins.className} text-shadow-sm`}
+            className={`text-4xl sm:text-5xl font-bold mb-4 text-white ${poppins.className}`}
             style={{
               textShadow: `-1px -1px 0 #000, 
                 1px -1px 0 #000, 
@@ -66,7 +69,7 @@ export default function HomeContent() {
 
           {/* Subheading with text shadow */}
           <p
-            className={`text-2xl sm:text-3xl mb-6 text-white ${poppins.className} text-shadow-sm`}
+            className={`text-2xl sm:text-3xl mb-6 text-white ${poppins.className}`}
             style={{
               textShadow: `-1px -1px 0 #000, 
                 1px -1px 0 #000, 
@@ -85,7 +88,7 @@ export default function HomeContent() {
         </motion.div>
 
         {/* Terminal message about Playground page */}
-        <div className="relative z-10 px-6 w-full max-w-md">
+        <div className="px-6 w-full max-w-md">
           <TerminalMessage message="I'm currently developing my Playground page where I'll share exciting projects and things I'm interested in. Stay tuned!" />
         </div>
       </div>
