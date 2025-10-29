@@ -15,7 +15,7 @@ import {
   SiDocker,
   SiTailwindcss,
   SiFramer,
-  SiPrisma,
+  SiMarkdown,
   SiPostgresql,
   SiGraphql,
 } from "react-icons/si"
@@ -61,7 +61,7 @@ const PythonIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     />
     <path
       fill="url(#python-original-b)"
-      d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.692 0-2.595 2.083-4.692 4.633-4.692z"
+      d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"
       transform="translate(0 10.26)"
     />
     <radialGradient
@@ -101,7 +101,7 @@ export const skillItems: SkillItem[] = [
   { name: "Docker", Icon: SiDocker, color: "#2496ED" },
   { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Framer Motion", Icon: SiFramer, color: "#0055FF" },
-  { name: "Prisma", Icon: SiPrisma, color: "#2D3748" },
+  { name: "Markdown", Icon: SiMarkdown, color: "#3B82F6" },
   { name: "API Integration", Icon: TbApi, color: "#00C7B7" },
   { name: "GraphQL", Icon: SiGraphql, color: "#E535AB" },
 ]
