@@ -18,11 +18,11 @@ export function VideoBackground({ videoUrl }: VideoBackgroundProps) {
   }, [])
 
   if (!isMounted) {
-    return <div className="absolute inset-0 hidden sm:block z-10" />
+    return null
   }
 
   return (
-    <div className="absolute inset-0 hidden sm:block z-10">
+    <div className="absolute inset-0 hidden sm:block">
       <video
         src={videoUrl}
         autoPlay
