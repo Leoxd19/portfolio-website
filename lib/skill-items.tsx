@@ -15,7 +15,7 @@ import {
   SiDocker,
   SiTailwindcss,
   SiFramer,
-  SiMarkdown,
+  SiPrisma,
   SiPostgresql,
   SiGraphql,
 } from "react-icons/si"
@@ -101,8 +101,7 @@ export const skillItems: SkillItem[] = [
   { name: "Docker", Icon: SiDocker, color: "#2496ED" },
   { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Framer Motion", Icon: SiFramer, color: "#0055FF" },
-  { name: "Markdown", Icon: SiMarkdown, color: "#3B82F6" },
+  { name: "Prisma", Icon: SiPrisma, color: "#2D3748" },
   { name: "API Integration", Icon: TbApi, color: "#00C7B7" },
   { name: "GraphQL", Icon: SiGraphql, color: "#E535AB" },
 ]
-

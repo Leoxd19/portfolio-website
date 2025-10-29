@@ -38,7 +38,7 @@ export default function PlaygroundContent() {
       {/* Background Image */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pandasleep2.jpg-6DvUUKVl4HxkPqxsRSNgtx1PqhC0fJ.jpeg"
+          src="/images/design-mode/pandasleep2.jpg.jpeg"
           alt="Sleeping red panda on a tree branch"
           fill
           priority
@@ -80,7 +80,7 @@ export default function PlaygroundContent() {
               {/* Image with responsive aspect ratio */}
               <div className="aspect-w-16 aspect-h-9 relative">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Prompting.png-8Sau5lyKbF14kCdFvzKmncfNznrWf1.jpeg"
+                  src="/images/design-mode/Prompting.png.jpeg"
                   alt="Structured AI prompt example for reasoning models showing goal, return format, warnings, and context sections"
                   width={1200}
                   height={675}
@@ -131,7 +131,7 @@ export default function PlaygroundContent() {
               <div className="w-full md:w-2/5">
                 <div className="relative bg-black rounded-lg overflow-hidden shadow-lg">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Espresso-Xoc-logo-neg-KsmT5k8qXxMWmbKoOlfkukiK8uCEll.png"
+                    src="/images/design-mode/Espresso-Xoc-logo-neg.png"
                     alt="Espresso-Xoc logo"
                     width={240}
                     height={240}
@@ -157,7 +157,7 @@ export default function PlaygroundContent() {
                     <div className="relative">
                       <div className="absolute inset-0 border-4 border-yellow-300 rounded-lg pointer-events-none"></div>
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lutece(s)-Tralv8RWwnuSr6KBKSKwBkvNfRZrMx.webp"
+                        src="/images/design-mode/Lutece(s).webp"
                         alt="The Lutece twins from BioShock Infinite flipping a coin"
                         width={800}
                         height={450}
@@ -180,4 +180,3 @@ export default function PlaygroundContent() {
     </div>
   )
 }
-

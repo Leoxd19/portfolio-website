@@ -35,4 +35,3 @@ export function StyledEmail({ email }: StyledEmailProps) {
     </BackdropBlur>
   )
 }
-

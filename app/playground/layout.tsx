@@ -9,4 +9,3 @@ export const metadata: Metadata = {
 export default function PlaygroundLayout({ children }: { children: ReactNode }) {
   return <>{children}</>
 }
-

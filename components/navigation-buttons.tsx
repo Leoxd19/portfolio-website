@@ -17,4 +17,3 @@ export function NavigationButtons() {
     </motion.div>
   )
 }
-

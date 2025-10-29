@@ -67,4 +67,3 @@ export function TerminalMessage({ message }: TerminalMessageProps) {
     </motion.div>
   )
 }
-
