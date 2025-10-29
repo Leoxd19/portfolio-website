@@ -7,7 +7,6 @@ import { motion } from "framer-motion"
 import { Poppins } from "next/font/google"
 import { TerminalMessage } from "@/components/terminal-message"
 import { VideoBackground } from "@/components/video-background"
-import { Footer } from "@/components/footer"
 
 // Load Poppins font with specific weights
 const poppins = Poppins({
@@ -90,10 +89,6 @@ export default function HomeContent() {
         <div className="relative z-10 px-6 w-full max-w-md">
           <TerminalMessage message="I'm currently developing my Playground page where I'll share exciting projects and things I'm interested in. Stay tuned!" />
         </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 z-50">
-        <Footer />
       </div>
     </div>
   )

@@ -45,8 +45,9 @@ function RootLayoutContent({ children }: { children: ReactNode }) {
       {/* Main content area */}
       <main className="flex-grow flex flex-col">{children}</main>
 
-      {/* Footer - appears at the bottom of every page */}
-      <Footer />
+      <div className="relative z-[60]">
+        <Footer />
+      </div>
 
       {/* Analytics tracking */}
       <Analytics />
